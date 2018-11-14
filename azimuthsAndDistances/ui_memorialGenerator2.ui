@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>942</width>
+    <height>654</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Configurações dos arquivos</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_7">
+   <item row="6" column="0" colspan="2">
+    <widget class="QFrame" name="frame_7">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_7">
+      <item>
+       <widget class="QLabel" name="label_23">
+        <property name="text">
+         <string>Selecione os tipos de arquivos que devem ser gerados:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="horizontalLayout_25">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="midLineWidth">
+         <number>0</number>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_24">
+         <item>
+          <widget class="QCheckBox" name="memorialSinteticHtml">
+           <property name="toolTip">
+            <string>Gerar um memorial sintetico da geometria selecionada</string>
+           </property>
+           <property name="text">
+            <string>Memorial Sintetico (.html)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="tableAreaCsv">
+           <property name="toolTip">
+            <string>Gerar uma tabela CSV com as coordenadas dos pontos da geometria selecionada.</string>
+           </property>
+           <property name="text">
+            <string>Tabela com pontos(.csv)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="memorialDescritivoOdt">
+           <property name="toolTip">
+            <string>Gerar o memorial descritivo da geometria selecionada em formato ODT do LibreOffice.</string>
+           </property>
+           <property name="text">
+            <string>Memorial descritivo (.odt)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="memorialDescritivoPdf">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string>Gerar o memorial descritivo da geometria selecionada em formato PDF</string>
+           </property>
+           <property name="text">
+            <string>Memorial descritivo (.pdf)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="2">
+    <widget class="QFrame" name="frame_6">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_6">
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_22">
+        <item>
+         <widget class="QPushButton" name="folderButton">
+          <property name="toolTip">
+           <string>Selecionar o diretorio onde serão criados os arquivos.</string>
+          </property>
+          <property name="text">
+           <string>Diretório para salvar arquivos:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="folderEdit"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QFrame" name="frame_5">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_24">
+        <property name="text">
+         <string>Preencha com as informações que irão aparecer no documento:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="tabShape">
+         <enum>QTabWidget::Rounded</enum>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <property name="elideMode">
+         <enum>Qt::ElideLeft</enum>
+        </property>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>Orgão Expeditor</string>
+         </attribute>
+         <attribute name="toolTip">
+          <string>Dados do Orgão que está expedindo o Memorial </string>
+         </attribute>
+         <widget class="QFrame" name="frame_10">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>881</width>
+            <height>311</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_26">
+             <item>
+              <widget class="QLabel" name="label_25">
+               <property name="toolTip">
+                <string>Orgão máximo expeditor.</string>
+               </property>
+               <property name="text">
+                <string>Orgão expeditor:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="OrgaoExpeditorEdit">
+               <property name="text">
+                <string>Ministério do Planejamento, Desenvolvimento e Gestão</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_28">
+             <item>
+              <widget class="QLabel" name="label_26">
+               <property name="toolTip">
+                <string>Secretaria que está expedindo o documento.</string>
+               </property>
+               <property name="text">
+                <string>Secretaria</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="secretariaEdit">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="text">
+                <string>Secretaria do Patrimônio da União</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_29">
+             <item>
+              <widget class="QLabel" name="label_27">
+               <property name="toolTip">
+                <string>Nome da superintêndencia que está expedindo o documento.</string>
+               </property>
+               <property name="text">
+                <string>Superintêndencia:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="superintenciaEdit">
+               <property name="text">
+                <string>Superintendência do Patrimônio da União</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_30">
+             <item>
+              <widget class="QLabel" name="label_28">
+               <property name="toolTip">
+                <string>Nome da divisão que está expedindo o documento.</string>
+               </property>
+               <property name="text">
+                <string>Divisão:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="divisaoEdit">
+               <property name="text">
+                <string>Divisão de identificação e Controle de Utilização do Patrimônio</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_31">
+             <item>
+              <widget class="QLabel" name="label_29">
+               <property name="toolTip">
+                <string>Endereço onde está sendo expedindo o documento.</string>
+               </property>
+               <property name="text">
+                <string>Endereço do Orgão:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="enderecoOrgaoEdit">
+               <property name="text">
+                <string>Av. Afonso Pena, 1316, 11ª andar, sala 1010, Belo horizonte/MG</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_32">
+             <item>
+              <widget class="QLabel" name="label_30">
+               <property name="toolTip">
+                <string>Número de controle usado para indexar os memoriais (caso houver)</string>
+               </property>
+               <property name="text">
+                <string>Número de Cointrole do Memorial:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="numMemorialEdit">
+               <property name="text">
+                <string>1545154</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_20">
+               <item>
+                <widget class="QLabel" name="label_17">
+                 <property name="toolTip">
+                  <string>Número no Sistema Eletrônico de Informações.</string>
+                 </property>
+                 <property name="text">
+                  <string>Número do processo SEI</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="numeroSeiEdit">
+                 <property name="text">
+                  <string>1236554962</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>Imóvel</string>
+         </attribute>
+         <attribute name="toolTip">
+          <string>Dados referente ao imóvel descrito no memorial.</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_10">
+          <item row="0" column="0" colspan="2">
+           <widget class="QFrame" name="frame_9">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_27">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                 <item>
+                  <widget class="QLabel" name="label">
+                   <property name="toolTip">
+                    <string>Nome do imóvel que vai constar no Memorial.</string>
+                   </property>
+                   <property name="text">
+                    <string>Nome do Imóvel:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="imovelEdit">
+                   <property name="text">
+                    <string>Área da União </string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_6">
+                 <item>
+                  <widget class="QLabel" name="label_2">
+                   <property name="toolTip">
+                    <string>Nome do proprietário do imóvel. </string>
+                   </property>
+                   <property name="text">
+                    <string>Proprietário:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="proprietarioEdit">
+                   <property name="text">
+                    <string>Guilherme Henrique</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <item>
+                  <widget class="QLabel" name="label_3">
+                   <property name="toolTip">
+                    <string>Rua, avenida, trecho,número e logradouro em que se encontra o imóvel.</string>
+                   </property>
+                   <property name="text">
+                    <string>Endereço:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="enderecoEdit">
+                   <property name="text">
+                    <string>Av. Amazonas</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <item>
+                  <widget class="QLabel" name="label_4">
+                   <property name="toolTip">
+                    <string>Nome do município onde se encontra o imóvel.</string>
+                   </property>
+                   <property name="text">
+                    <string>Município:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="municipioEdit">
+                   <property name="text">
+                    <string>Belo Horizonte</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <item>
+                  <widget class="QLabel" name="label_22">
+                   <property name="toolTip">
+                    <string>Nome do estado onde se encontra o imóvel.</string>
+                   </property>
+                   <property name="text">
+                    <string>UF:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="ufEdit">
+                   <property name="text">
+                    <string>Minas Gerais</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_35">
+                 <item>
+                  <widget class="QLabel" name="label_32">
+                   <property name="toolTip">
+                    <string>Nome da comarca onde o imóvel foi registrado.</string>
+                   </property>
+                   <property name="text">
+                    <string>Comarca:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="comarcaEdit">
+                   <property name="text">
+                    <string>Saõ Geraldo</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_10">
+                 <item>
+                  <widget class="QLabel" name="label_8">
+                   <property name="toolTip">
+                    <string>Matrícula do imóvel na comarca. </string>
+                   </property>
+                   <property name="text">
+                    <string>Matrícula:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="matriculaEdit">
+                   <property name="text">
+                    <string>ABC12451540</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_11">
+                 <item>
+                  <widget class="QLabel" name="label_9">
+                   <property name="toolTip">
+                    <string>Registro Imobiliario Patrimonial.</string>
+                   </property>
+                   <property name="text">
+                    <string>RIP:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="ripEdit">
+                   <property name="text">
+                    <string>A4878487</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_12">
+                 <item>
+                  <widget class="QLabel" name="label_10">
+                   <property name="toolTip">
+                    <string>Número de Bem Patrimonial  </string>
+                   </property>
+                   <property name="text">
+                    <string>NBP:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="nbpEdit">
+                   <property name="text">
+                    <string>Mb1245151</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_13">
+                 <item>
+                  <widget class="QLabel" name="label_20">
+                   <property name="toolTip">
+                    <string>Código de cadastro no INCRA.</string>
+                   </property>
+                   <property name="text">
+                    <string>Código INCRA:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="codIncraEdit">
+                   <property name="text">
+                    <string>4514784242018</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_36">
+                 <item>
+                  <widget class="QLabel" name="label_33">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Código da planta correspondente. Exemplo: 01/2018 DIIUP-SPU-MG&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Planta correspondente:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="plantaCorrespondenteEdit">
+                   <property name="text">
+                    <string>P1010154</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QFrame" name="frame">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="0">
+              <layout class="QVBoxLayout" name="verticalLayout">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout">
+                 <item>
+                  <widget class="QLabel" name="label_19">
+                   <property name="toolTip">
+                    <string>Fator kappa usado</string>
+                   </property>
+                   <property name="text">
+                    <string>Fator Kappa:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="kappaEdit">
+                   <property name="text">
+                    <string>0.9996</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                 <item>
+                  <widget class="QLabel" name="label_6">
+                   <property name="toolTip">
+                    <string>Meridiano Central usado no mapa.</string>
+                   </property>
+                   <property name="text">
+                    <string>Meridiano Central:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="meridianoEdit"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_3">
+                 <item>
+                  <widget class="QLabel" name="label_7">
+                   <property name="toolTip">
+                    <string>Convergencia Meridiana usada no mapa.</string>
+                   </property>
+                   <property name="text">
+                    <string>Convergencia Meridiana:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="convergenciaEdit">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <item>
+                  <widget class="QLabel" name="label_21">
+                   <property name="toolTip">
+                    <string>Nome do Sistema de Projeção usado no mapa.</string>
+                   </property>
+                   <property name="text">
+                    <string>Sistema  de projeção:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="projectionEdit">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_23">
+                 <item>
+                  <widget class="QLabel" name="label_5">
+                   <property name="toolTip">
+                    <string>Nome do DATUM usado no mapa.</string>
+                   </property>
+                   <property name="text">
+                    <string>DATUM:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="datumEdit"/>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QFrame" name="frame_2">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="0" column="0">
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_14">
+                 <item>
+                  <widget class="QLabel" name="label_11">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rede Brasileira de Monitoramento Contínuo dos Sistemas GNSS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Estação RBMC de origem:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="rbmcOrigemEdit">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_15">
+                 <item>
+                  <widget class="QLabel" name="label_12">
+                   <property name="toolTip">
+                    <string>Coodenada Leste da RBMC.</string>
+                   </property>
+                   <property name="text">
+                    <string>Coordenada E da RBMC:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="rbmcEsteEdit">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_16">
+                 <item>
+                  <widget class="QLabel" name="label_13">
+                   <property name="toolTip">
+                    <string>Coodenada Norte da RBMC.</string>
+                   </property>
+                   <property name="text">
+                    <string>Coordenada N da RBMC:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="rbmcNorteEdit">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_17">
+                 <item>
+                  <widget class="QLabel" name="label_14">
+                   <property name="toolTip">
+                    <string>Localização da Estacão RBMC.</string>
+                   </property>
+                   <property name="text">
+                    <string>Localização da Estação RBMC:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="localRbmcEdit">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>Responsável Técnico</string>
+         </attribute>
+         <attribute name="toolTip">
+          <string>Dados do resposável técnico que está gerando o Memorial.</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_11">
+          <item row="0" column="0">
+           <widget class="QFrame" name="frame_3">
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_34">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_18">
+                 <item>
+                  <widget class="QLabel" name="label_15">
+                   <property name="toolTip">
+                    <string>Nome do responsável técnico que está gerando o documento.</string>
+                   </property>
+                   <property name="text">
+                    <string>Responsável Técnico:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="autorEdit">
+                   <property name="text">
+                    <string>Jessica Viana</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_33">
+                 <item>
+                  <widget class="QLabel" name="label_31">
+                   <property name="toolTip">
+                    <string>Cargo que o Responsável técnico ocupa dentro do orgão.</string>
+                   </property>
+                   <property name="text">
+                    <string>Cargo</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="officeResponsibleEdit">
+                   <property name="text">
+                    <string>Engenherira Civil</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_19">
+                 <item>
+                  <widget class="QLabel" name="label_16">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="creaCau">
+                   <property name="toolTip">
+                    <string>Selecione o tipo de identificador que será usado para identificar o técnico responsável.</string>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>CREA</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>CAU</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="creaEdit">
+                   <property name="text">
+                    <string>MG154154154</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_37">
+                 <item>
+                  <widget class="QLabel" name="label_18">
+                   <property name="toolTip">
+                    <string>Cidade onde </string>
+                   </property>
+                   <property name="text">
+                    <string>Cidade</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="mucipioResponsavelEdit">
+                   <property name="toolTip">
+                    <string>Cidade onde o Responsável está gerando o documento</string>
+                   </property>
+                   <property name="text">
+                    <string>Belo Horizonte</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="8" column="0" colspan="2">
+    <widget class="QFrame" name="frame_8">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_8">
+      <item row="0" column="0">
+       <widget class="QPushButton" name="createButton">
+        <property name="text">
+         <string>Criar arquivos</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="closeButton">
+        <property name="text">
+         <string>Cancelar</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>tableAreaCsv</tabstop>
+  <tabstop>closeButton</tabstop>
+  <tabstop>memorialSinteticHtml</tabstop>
+  <tabstop>memorialDescritivoPdf</tabstop>
+  <tabstop>kappaEdit</tabstop>
+  <tabstop>memorialDescritivoOdt</tabstop>
+  <tabstop>rbmcOrigemEdit</tabstop>
+  <tabstop>rbmcEsteEdit</tabstop>
+  <tabstop>rbmcNorteEdit</tabstop>
+  <tabstop>localRbmcEdit</tabstop>
+  <tabstop>numeroSeiEdit</tabstop>
+  <tabstop>createButton</tabstop>
+  <tabstop>meridianoEdit</tabstop>
+  <tabstop>convergenciaEdit</tabstop>
+  <tabstop>projectionEdit</tabstop>
+  <tabstop>datumEdit</tabstop>
+  <tabstop>autorEdit</tabstop>
+  <tabstop>creaEdit</tabstop>
+  <tabstop>imovelEdit</tabstop>
+  <tabstop>proprietarioEdit</tabstop>
+  <tabstop>enderecoEdit</tabstop>
+  <tabstop>municipioEdit</tabstop>
+  <tabstop>ufEdit</tabstop>
+  <tabstop>matriculaEdit</tabstop>
+  <tabstop>ripEdit</tabstop>
+  <tabstop>nbpEdit</tabstop>
+  <tabstop>codIncraEdit</tabstop>
+  <tabstop>folderButton</tabstop>
+  <tabstop>folderEdit</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
