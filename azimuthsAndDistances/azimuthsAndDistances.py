@@ -119,9 +119,9 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
     def isValidType(self):
         """Verifies the geometry type.
         """
-        #if self.geom.isMultipart():
-        #    QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("The limit of a patrimonial area must be a single part geometry."))
-        #    return False
+        if self.geom.isMultipart():
+           QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("The limit of a patrimonial area must be a single part geometry."))
+           return False
 
         #if self.geom.type() == QGis.Line:
         if self.geom.type() == QgsWkbTypes.LineGeometry:

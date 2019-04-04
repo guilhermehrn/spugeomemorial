@@ -877,7 +877,11 @@ class MemorialGenerator(QDialog, FORM_CLASS):
                     ptex += " , "
                     ptex +="localizada em " + self.localRbmcEdit.text()+", "
 
-                sp = self.projectionEdit.text().split(" ")[3]
+                #print(self.projectionEdit.text().split(" "))
+
+                sp = 23 #estou setando como fuso horaio 23, que é o fuso paradro utilizado
+                if len(self.projectionEdit.text().split(" ")) > 3:
+                    sp = self.projectionEdit.text().split(" ")[3]
                 ptex += " e encontram-se representadas no sistema UTM, referenciadas ao Meridiano Central "
                 ptex += '<font size=11 name="Times-Bold"> %s </font>' %self.meridianoEdit.text().replace('.', ',')
                 ptex += ", Fuso " + '<font size=11 name="Times-Bold"> %s </font>' %str(sp)

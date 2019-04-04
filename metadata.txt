@@ -1,7 +1,7 @@
-# This file contains metadata for your plugin. Since 
-# version 2.0 of QGIS this is the proper way to supply 
-# information about a plugin. The old method of 
-# embedding metadata in __init__.py will 
+# This file contains metadata for your plugin. Since
+# version 2.0 of QGIS this is the proper way to supply
+# information about a plugin. The old method of
+# embedding metadata in __init__.py will
 # is no longer supported since version 2.0.
 
 # This file should be included when you package your plugin.# Mandatory items:
@@ -10,7 +10,7 @@
 name=SPUGeo Memorial
 qgisMinimumVersion=3.0
 description=Generates descriptive memorials in the format of the SPU of the Federal Government of Brazil
-version=0.1
+version=0.2
 author=Guilherme Henrique
 email=guilherme.henrique@planejamento.gov.br
 
@@ -23,7 +23,7 @@ repository=https://github.com/guilhermehrn/spugeo-memorial.git
 # Recommended items:
 
 # Uncomment the following line and add your changelog:
-# changelog=
+# changelog=0.2 - Correction of bugs related to the type Multipolygon.
 
 # Tags are comma separated with spaces allowed
 tags=descriptive memorials, azimuths
@@ -36,4 +36,3 @@ experimental=True
 
 # deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False
-

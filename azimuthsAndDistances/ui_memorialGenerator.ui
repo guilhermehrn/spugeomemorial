@@ -157,7 +157,7 @@
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <property name="elideMode">
          <enum>Qt::ElideLeft</enum>
@@ -676,7 +676,7 @@
                  <item>
                   <widget class="QLabel" name="label_21">
                    <property name="toolTip">
-                    <string>Nome do Sistema de Projeção usado no mapa.</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nome do Sistema de Projeção usado no mapa. Aqui deve ser utilizado &amp;quot;UTM Zone 23S&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="text">
                     <string>Sistema  de projeção:</string>
@@ -697,7 +697,7 @@
                  <item>
                   <widget class="QLabel" name="label_5">
                    <property name="toolTip">
-                    <string>Nome do DATUM usado no mapa.</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nome do DATUM usado no mapa. Aqui deve ser usado o DATUM SIRGAS 2000&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="text">
                     <string>DATUM:</string>
