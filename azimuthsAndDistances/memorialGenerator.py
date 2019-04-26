@@ -41,6 +41,7 @@ from reportlab.lib.units import inch
 from reportlab.platypus import SimpleDocTemplate, Table as TablePDF, TableStyle
 from datetime import date
 from reportlab.lib.units import mm
+from PyQt5.QtCore import QSettings
 
 from importlib import reload
 
@@ -88,6 +89,67 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         self.logo = os.path.join(self.pathlogo, 'templates/template_memorial_pdf/rep_of_brazil2.jpg')
         self.formattedTime = date.today().timetuple()
         self.subTitle = 'Memorial Descritivo'
+
+        self.settings = QSettings()
+
+
+    def storeConfigurationMemorial(self):
+
+        #config da aba Orgao expeditor
+
+        self.settings.beginGroup('memorial/Config/Last_Memorial')
+        self.settings.setValue('orgaoExpeditorConf', self.OrgaoExpeditorEdit.text())
+        self.settings.setValue('secretariaConf', self.secretariaEdit.text())
+        self.settings.setValue('superintendenciaConf', self.superintenciaEdit.text())
+        self.settings.setValue('divisaoConf', self.divisaoEdit.text())
+        self.settings.setValue('enderecoOrgaoConf', self.enderecoOrgaoEdit.text())
+        self.settings.setValue('numMemorialConf', self.numMemorialEdit.text())
+        self.settings.setValue('numeroSeiConf', self.numeroSeiEdit.text())
+        self.settings.setValue('folderConf', self.folderEdit.text())
+
+        #config da imovel
+
+        self.settings.setValue('ufConf', self.ufEdit.text())
+        self.settings.setValue('comarcaConf', self.comarcaEdit.text())
+
+
+        #config da aba resposvel tecnico
+        self.settings.setValue('autorConf', self.autorEdit.text())
+        self.settings.setValue('officeResponsibleConf', self.officeResponsibleEdit.text())
+        self.settings.setValue('creaConf', self.creaEdit.text())
+        self.settings.setValue('mucipioResponsavelConf', self.mucipioResponsavelEdit.text())
+
+
+        #Confguraç~eos de arquivo que podem ser gerados
+        self.settings.setValue('memorialSinteticHtmlConf',self.memorialSinteticHtml.isChecked())
+        self.settings.setValue('tableAreaCsvConf', self.tableAreaCsv.isChecked())
+        self.settings.setValue('memorialDescritivoPdfConf', self.memorialDescritivoPdf.isChecked())
+        self.settings.setValue('memorialDescritivoOdtConf', self.memorialDescritivoOdt.isChecked())
+        self.settings.endGroup()
+
+
+    def getConfigurationMemorial(self):
+
+        self.settings.beginGroup('memorial/Config/Last_Memorial')
+
+        self.OrgaoExpeditorEdit.setText(self.settings.value('orgaoExpeditorConf'))
+        self.secretariaEdit.setText(self.settings.value('secretariaConf'))
+        self.superintenciaEdit.setText(self.settings.value('superintendenciaConf'))
+        self.divisaoEdit.setText(self.settings.value('divisaoConf'))
+        self.enderecoOrgaoEdit.setText(self.settings.value('enderecoOrgaoConf'))
+        self.numMemorialEdit.setText(self.settings.value('numMemorialConf'))
+        self.numeroSeiEdit.setText(self.settings.value('numeroSeiConf'))
+        self.folderEdit.setText(self.settings.value('folderConf'))
+
+        self.ufEdit.setText(self.settings.value('ufConf'))
+        self.comarcaEdit.setText(self.settings.value('comarcaConf'))
+
+        self.autorEdit.setText(self.settings.value('autorConf'))
+        self.officeResponsibleEdit.setText(self.settings.value('officeResponsibleConf'))
+        self.creaEdit.setText(self.settings.value('creaConf'))
+        self.mucipioResponsavelEdit.setText(self.settings.value('mucipioResponsavelConf'))
+
+        self.settings.endGroup()
 
     def setDirectory(self):
         folder = QFileDialog.getExistingDirectory(self, "Select Directory")
@@ -165,6 +227,7 @@ class MemorialGenerator(QDialog, FORM_CLASS):
 
         self.copyAndRenameFiles()
         try:
+            self.storeConfigurationMemorial()
             if self.memorialSinteticHtml.isChecked():
                 self.createSimpleMemorial()
 
@@ -181,6 +244,7 @@ class MemorialGenerator(QDialog, FORM_CLASS):
                 QMessageBox.information(self, self.tr('Attention!'), self.tr('Select at least one file type!'))
             else:
                 QMessageBox.information(self, self.tr('Information!'), self.tr('Files created successfully!'))
+
 
         except IOError as e:
             QMessageBox.information(self, self.tr('ERROR!'), self.tr("You must be trying to modify or replace an existing file that is being used by another program."))

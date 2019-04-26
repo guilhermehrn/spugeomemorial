@@ -114,7 +114,9 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
                 confrontingList.append(item.text())
 
             d = MemorialGenerator(self.iface.mapCanvas().currentLayer().crs().description(), self.centralMeridian, self.lineEdit.text(), self.tableWidget, self.area, self.perimeter)
+            d.getConfigurationMemorial()
             d.exec_()
+            #d.getConfigurationMemorial()
 
     def isValidType(self):
         """Verifies the geometry type.

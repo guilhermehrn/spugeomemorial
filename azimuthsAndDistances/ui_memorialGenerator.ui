@@ -157,7 +157,7 @@
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <property name="elideMode">
          <enum>Qt::ElideLeft</enum>
@@ -200,7 +200,7 @@
              <item>
               <widget class="QLineEdit" name="OrgaoExpeditorEdit">
                <property name="text">
-                <string>Ministério do Planejamento, Desenvolvimento e Gestão</string>
+                <string>Ministério da Economia</string>
                </property>
               </widget>
              </item>
@@ -224,7 +224,7 @@
                 <bool>true</bool>
                </property>
                <property name="text">
-                <string>Secretaria do Patrimônio da União</string>
+                <string>Secretaria Especial de Desestatização e Desinvestimento</string>
                </property>
               </widget>
              </item>
@@ -245,7 +245,7 @@
              <item>
               <widget class="QLineEdit" name="superintenciaEdit">
                <property name="text">
-                <string>Superintendência do Patrimônio da União</string>
+                <string>Secretaria de Coordenação e Governança do Patrimônio da União</string>
                </property>
               </widget>
              </item>
@@ -266,7 +266,7 @@
              <item>
               <widget class="QLineEdit" name="divisaoEdit">
                <property name="text">
-                <string>Divisão de identificação e Controle de Utilização do Patrimônio</string>
+                <string>Superintendência em São Paulo</string>
                </property>
               </widget>
              </item>
@@ -375,6 +375,9 @@
                  </item>
                  <item>
                   <widget class="QLineEdit" name="imovelEdit">
+                   <property name="inputMask">
+                    <string/>
+                   </property>
                    <property name="text">
                     <string/>
                    </property>
