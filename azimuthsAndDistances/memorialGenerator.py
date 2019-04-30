@@ -336,7 +336,7 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         rowCount = self.tableWidget.rowCount()
 
         for i in range(0,rowCount):
-            line  = str()
+            line  = str("utf-8")
             side = self.tableWidget.item(i,3).text()
             sideSplit = side.split("-")
             line += '"'+ sideSplit[0]+'";"'+sideSplit[1]+'";'
