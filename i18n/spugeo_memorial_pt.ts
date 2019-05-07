@@ -1,52 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="2.0" language="pt_BR" sourcelanguage="en_US">
 <context>
-    <name>AzimuthDistanceCalculator</name>
-    <message>
-        <location filename="azimuthdistancecalculator.py" line="78"/>
-        <source>Calculator</source>
-        <translation type="obsolete">Calculador</translation>
-    </message>
-    <message>
-        <location filename="azimuthdistancecalculator.py" line="90"/>
-        <source>Azimuth and Distance Calculator</source>
-        <translation type="obsolete">Calculador de Azimutes e Distâncias</translation>
-    </message>
-    <message>
-        <location filename="ui_azimuthdistancecalculator.ui" line="20"/>
-        <source>Calculate Kappa And Convergence</source>
-        <translation type="obsolete">Calcular Kappa e Convergência</translation>
-    </message>
-    <message>
-        <location filename="ui_azimuthdistancecalculator.ui" line="27"/>
-        <source>Generates a CSV with azimuths and distances for the selected feature</source>
-        <translation type="obsolete">Gera um CSV com azimutes e distâncias para a feição selecionada</translation>
-    </message>
-    <message>
-        <location filename="ui_azimuthdistancecalculator.ui" line="30"/>
-        <source>Calculate Azimuths and Distances</source>
-        <translation type="obsolete">Calcular Azimutes e Distancias</translation>
-    </message>
-    <message>
-        <location filename="ui_azimuthdistancecalculator.ui" line="25"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic; color:#000000;&quot;&gt;Note: All files generated are made according to the brazilian laws. Feel free to check the code and make the documents in your language.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic; color:#000000;&quot;&gt;Nota: Todos os arquivos gerados são feitos de acordo com a legislação brasileira. Sinta-se livre para conferir o código e fazer os documentos no seu idioma.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="ui_azimuthdistancecalculator.ui" line="14"/>
-        <source>AzimuthDistanceCalculator</source>
-        <translation type="obsolete">AzimuthDistanceCalculator</translation>
-    </message>
-</context>
-<context>
     <name>AzimuthDistanceCalculatorDialog</name>
     <message>
         <location filename="azimuthdistancecalculatordialog.py" line="71"/>
@@ -67,18 +21,13 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AzimuthDistanceCalculatorspu</name>
     <message>
-        <location filename="../spugeo_memorial_dialog_base.ui" line="14"/>
-        <source>SPUGeo Memorial</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../spugeo_memorial_dialog_base.ui" line="25"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic; color:#000000;&quot;&gt;Note: All files generated are made according to the brazilian laws. Feel free to check the code and make the documents in your language.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -99,11 +48,25 @@ p, li { white-space: pre-wrap; }
         <source>Calculate Kappa And Convergence</source>
         <translation type="unfinished">Calcular Kappa e Convergência</translation>
     </message>
+    <message>
+        <location filename="../spugeo_memorial_dialog_base.ui" line="14"/>
+        <source>SPUGeo Memorial</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spugeo_memorial_dialog_base.ui" line="25"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/plugins/spugeo_memorial/urgeologo.png&quot; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AzimuthsAndDistancesDialog</name>
     <message>
-        <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="171"/>
+        <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="173"/>
         <source>Warning!</source>
         <translation>Atenção!</translation>
     </message>
@@ -113,17 +76,17 @@ p, li { white-space: pre-wrap; }
         <translation>Clique primeiro no botão calcular para gerar os dados necessários.</translation>
     </message>
     <message>
-        <location filename="azimuthsAndDistances/azimuthsAndDistances.py" line="117"/>
+        <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="125"/>
         <source>The limit of a patrimonial area must be a single part geometry.</source>
-        <translation type="obsolete">O limite de uma área patrimonial não pode ser uma geometria multiparte.</translation>
+        <translation type="unfinished">O limite de uma área patrimonial não pode ser uma geometria multiparte.</translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="138"/>
+        <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="140"/>
         <source>The selected geometry should be a Line or a Polygon.</source>
         <translation>A geometria selecionada deve ser uma linha ou polígono.</translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="171"/>
+        <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="173"/>
         <source>Please, insert the meridian convergence.</source>
         <translation>Por favor, insira a convergência meridiana.</translation>
     </message>
@@ -269,92 +232,92 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="393"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="396"/>
         <source>Proprietário:</source>
         <translation></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="435"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="438"/>
         <source>Município:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="477"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="480"/>
         <source>Comarca:</source>
         <translation></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="414"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="417"/>
         <source>Endereço:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="456"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="459"/>
         <source>UF:</source>
         <translation></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="565"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="568"/>
         <source>Código INCRA:</source>
         <translation></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="502"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="505"/>
         <source>Matrícula:</source>
         <translation></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="736"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="739"/>
         <source>Estação RBMC de origem:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="757"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="760"/>
         <source>Coordenada E da RBMC:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="778"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="781"/>
         <source>Coordenada N da RBMC:</source>
         <translation></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="799"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="802"/>
         <source>Localização da Estação RBMC:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="623"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="626"/>
         <source>Fator Kappa:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="630"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="633"/>
         <source>0.9996</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="644"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="647"/>
         <source>Meridiano Central:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="661"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="664"/>
         <source>Convergencia Meridiana:</source>
         <translation></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="682"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="685"/>
         <source>Sistema  de projeção:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="703"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="706"/>
         <source>DATUM:</source>
         <translation></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="846"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="849"/>
         <source>Responsável Técnico:</source>
         <translation></translation>
     </message>
@@ -364,7 +327,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="963"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="966"/>
         <source>Criar arquivos</source>
         <translation></translation>
     </message>
@@ -439,11 +402,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="167"/>
-        <source>Orgão Expeditor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
         <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="170"/>
         <source>Dados do Orgão que está expedindo o Memorial </source>
         <translation type="unfinished"></translation>
@@ -454,28 +412,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="196"/>
-        <source>Orgão expeditor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="203"/>
-        <source>Ministério do Planejamento, Desenvolvimento e Gestão</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
         <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="214"/>
         <source>Secretaria que está expedindo o documento.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="217"/>
-        <source>Secretaria</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="227"/>
-        <source>Secretaria do Patrimônio da União</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
@@ -484,28 +422,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="241"/>
-        <source>Superintêndencia:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="248"/>
-        <source>Superintendência do Patrimônio da União</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
         <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="259"/>
         <source>Nome da divisão que está expedindo o documento.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="262"/>
-        <source>Divisão:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="269"/>
-        <source>Divisão de identificação e Controle de Utilização do Patrimônio</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
@@ -534,11 +452,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="327"/>
-        <source>Número do processo SEI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
         <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="347"/>
         <source>Imóvel</source>
         <translation type="unfinished"></translation>
@@ -554,210 +467,255 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="390"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="393"/>
         <source>Nome do proprietário do imóvel. </source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="411"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="414"/>
         <source>Rua, avenida, trecho,número e logradouro em que se encontra o imóvel.</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="432"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="435"/>
         <source>Nome do município onde se encontra o imóvel.</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="453"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="456"/>
         <source>Nome do estado onde se encontra o imóvel.</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="474"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="477"/>
         <source>Nome da comarca onde o imóvel foi registrado.</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="499"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="502"/>
         <source>Matrícula do imóvel na comarca. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="520"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="523"/>
         <source>Registro Imobiliario Patrimonial.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="523"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="526"/>
         <source>RIP:</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="541"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="544"/>
         <source>Número de Bem Patrimonial  </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="544"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="547"/>
         <source>NBP:</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="562"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="565"/>
         <source>Código de cadastro no INCRA.</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="583"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="586"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Código da planta correspondente. Exemplo: 01/2018 DIIUP-SPU-MG&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="586"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="589"/>
         <source>Planta correspondente:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="620"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="623"/>
         <source>Fator kappa usado</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="641"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="644"/>
         <source>Meridiano Central usado no mapa.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="658"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="661"/>
         <source>Convergencia Meridiana usada no mapa.</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="679"/>
-        <source>Nome do Sistema de Projeção usado no mapa.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="700"/>
-        <source>Nome do DATUM usado no mapa.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="733"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="736"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rede Brasileira de Monitoramento Contínuo dos Sistemas GNSS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="754"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="757"/>
         <source>Coodenada Leste da RBMC.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="775"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="778"/>
         <source>Coodenada Norte da RBMC.</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="796"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="799"/>
         <source>Localização da Estacão RBMC.</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="821"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="824"/>
         <source>Responsável Técnico</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="824"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="827"/>
         <source>Dados do resposável técnico que está gerando o Memorial.</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="843"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="846"/>
         <source>Nome do responsável técnico que está gerando o documento.</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="864"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="867"/>
         <source>Cargo que o Responsável técnico ocupa dentro do orgão.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="867"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="870"/>
         <source>Cargo</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="892"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="895"/>
         <source>Selecione o tipo de identificador que será usado para identificar o técnico responsável.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="896"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="899"/>
         <source>CREA</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="901"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="904"/>
         <source>CAU</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="920"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="923"/>
         <source>Cidade onde </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="923"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="926"/>
         <source>Cidade</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="930"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="933"/>
         <source>Cidade onde o Responsável está gerando o documento</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="970"/>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="973"/>
         <source>Cancelar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="167"/>
+        <source>Orgão Expedidor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="196"/>
+        <source>Ministério: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="203"/>
+        <source>Ministério da Economia</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="217"/>
+        <source>Secretaria Especial:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="227"/>
+        <source>Secretaria Especial de Desestatização e Desinvestimento</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="241"/>
+        <source>Secretaria:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="248"/>
+        <source>Secretaria de Coordenação e Governança do Patrimônio da União</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="262"/>
+        <source>Divisão/Superintêndencia:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="327"/>
+        <source>Número do Processo SEI:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="682"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nome do Sistema de Projeção usado no mapa. Aqui deve ser utilizado &amp;quot;UTM Zone 23S&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="703"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nome do DATUM usado no mapa. Aqui deve ser usado o DATUM SIRGAS 2000&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MemorialGenerator</name>
     <message>
-        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="182"/>
+        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="245"/>
         <source>Attention!</source>
         <translation>Atenção!</translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="111"/>
+        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="173"/>
         <source>A directory should be selected!</source>
         <translation>Um diretório deve ser selecionado!</translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="182"/>
+        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="245"/>
         <source>Select at least one file type!</source>
         <translation>Selecione pelo meno um tipo de arquivo!</translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="184"/>
+        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="247"/>
         <source>Information!</source>
         <translation>Informação!</translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="184"/>
+        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="247"/>
         <source>Files created successfully!</source>
         <translation>Arquivos criados com sucesso!</translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="187"/>
+        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="251"/>
         <source>ERROR!</source>
         <translation>ERRO!</translation>
     </message>
     <message>
-        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="187"/>
+        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="251"/>
         <source>You must be trying to modify or replace an existing file that is being used by another program.</source>
         <translation>Você deve estar tentando modificar ou substituir um arquivo existente que está sendo usado por outro programa.</translation>
     </message>
@@ -791,6 +749,52 @@ p, li { white-space: pre-wrap; }
         <location filename="../spugeo_memorial_dialog.py" line="79"/>
         <source>One and only one feature must be selected to perform the calculations.</source>
         <translation type="unfinished">Uma e somente uma feição deve estar selecionada para realizar os cálculos.</translation>
+    </message>
+</context>
+<context>
+    <name>spugeo_memorial</name>
+    <message>
+        <location filename="azimuthdistancecalculator.py" line="78"/>
+        <source>Calculator</source>
+        <translation type="obsolete">Calculador</translation>
+    </message>
+    <message>
+        <location filename="azimuthdistancecalculator.py" line="90"/>
+        <source>Azimuth and Distance Calculator</source>
+        <translation type="obsolete">Calculador de Azimutes e Distâncias</translation>
+    </message>
+    <message>
+        <location filename="ui_azimuthdistancecalculator.ui" line="20"/>
+        <source>Calculate Kappa And Convergence</source>
+        <translation type="obsolete">Calcular Kappa e Convergência</translation>
+    </message>
+    <message>
+        <location filename="ui_azimuthdistancecalculator.ui" line="27"/>
+        <source>Generates a CSV with azimuths and distances for the selected feature</source>
+        <translation type="obsolete">Gera um CSV com azimutes e distâncias para a feição selecionada</translation>
+    </message>
+    <message>
+        <location filename="spugeo_memorial_dialog_base.ui" line="39"/>
+        <source>Calculate Azimuths and Distances</source>
+        <translation type="obsolete">Calcular Azimutes e Distancias</translation>
+    </message>
+    <message>
+        <location filename="ui_azimuthdistancecalculator.ui" line="25"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic; color:#000000;&quot;&gt;Note: All files generated are made according to the brazilian laws. Feel free to check the code and make the documents in your language.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic; color:#000000;&quot;&gt;Nota: Todos os arquivos gerados são feitos de acordo com a legislação brasileira. Sinta-se livre para conferir o código e fazer os documentos no seu idioma.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="ui_azimuthdistancecalculator.ui" line="14"/>
+        <source>AzimuthDistanceCalculator</source>
+        <translation type="obsolete">AzimuthDistanceCalculator</translation>
     </message>
 </context>
 </TS>
