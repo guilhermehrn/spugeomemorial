@@ -10,7 +10,7 @@
                     azimuthsAndDistances/ui_azimuthsAndDistances.ui \
                     azimuthsAndDistances/ui_memorialGenerator.ui \
 
- TRANSLATIONS    = i18n/spugeo_memorial_pt.ts
+ TRANSLATIONS    = i18n/spugeomemorial_pt.ts
 
 RESOURCES += \
     resources.qrc

@@ -1,53 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="pt_BR" sourcelanguage="en_US">
-<context>
-    <name>AzimuthDistanceCalculatorDialog</name>
-    <message>
-        <location filename="azimuthdistancecalculatordialog.py" line="71"/>
-        <source>Warning!</source>
-        <translation type="obsolete">Atenção!</translation>
-    </message>
-    <message>
-        <location filename="azimuthdistancecalculatordialog.py" line="71"/>
-        <source>Please, open a layer and select a line or polygon feature.</source>
-        <translation type="obsolete">Por favor, abra uma camada e selecione uma linha ou polígono.</translation>
-    </message>
-    <message>
-        <location filename="azimuthdistancecalculatordialog.py" line="69"/>
-        <source>One and only one feature must be selected to perform the calculations.</source>
-        <translation type="obsolete">Uma e somente uma feição deve estar selecionada para realizar os cálculos.</translation>
-    </message>
-</context>
+<!DOCTYPE TS><TS version="2.0">
 <context>
     <name>AzimuthDistanceCalculatorspu</name>
-    <message>
-        <location filename="../spugeo_memorial_dialog_base.ui" line="25"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic; color:#000000;&quot;&gt;Note: All files generated are made according to the brazilian laws. Feel free to check the code and make the documents in your language.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic; color:#000000;&quot;&gt;Nota: Todos os arquivos gerados são feitos de acordo com a legislação brasileira. Sinta-se livre para conferir o código e fazer os documentos no seu idioma.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../spugeo_memorial_dialog_base.ui" line="36"/>
-        <source>Generates a CSV with azimuths and distances for the selected feature</source>
-        <translation type="unfinished">Gera um CSV com azimutes e distâncias para a feição selecionada</translation>
-    </message>
-    <message>
-        <location filename="../spugeo_memorial_dialog_base.ui" line="39"/>
-        <source>Calculate Azimuths and Distances</source>
-        <translation type="unfinished">Calcular Azimutes e Distancias</translation>
-    </message>
-    <message>
-        <location filename="../spugeo_memorial_dialog_base.ui" line="46"/>
-        <source>Calculate Kappa And Convergence</source>
-        <translation type="unfinished">Calcular Kappa e Convergência</translation>
-    </message>
     <message>
         <location filename="../spugeo_memorial_dialog_base.ui" line="14"/>
         <source>SPUGeo Memorial</source>
@@ -62,33 +16,48 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/plugins/spugeo_memorial/urgeologo.png&quot; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../spugeo_memorial_dialog_base.ui" line="36"/>
+        <source>Generates a CSV with azimuths and distances for the selected feature</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spugeo_memorial_dialog_base.ui" line="39"/>
+        <source>Calculate Azimuths and Distances</source>
+        <translation type="finished">Calculador de Azimutes e Distâncias</translation>
+    </message>
+    <message>
+        <location filename="../spugeo_memorial_dialog_base.ui" line="46"/>
+        <source>Calculate Kappa And Convergence</source>
+        <translation type="finished">Calcular Kappa e Convergência</translation>
+    </message>
 </context>
 <context>
     <name>AzimuthsAndDistancesDialog</name>
     <message>
         <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="173"/>
         <source>Warning!</source>
-        <translation type="unfinished">Atenção!</translation>
+        <translation type="finished">Aviso!</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="109"/>
         <source>Click on calculate button first to generate the needed data.</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Clique primeiro no botão calcular para gerar os dados necessários.</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="125"/>
         <source>The limit of a patrimonial area must be a single part geometry.</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">O limite de uma área patrimonial não pode ser uma geometria multiparte.</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="140"/>
         <source>The selected geometry should be a Line or a Polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">A geometria selecionada deve ser uma linha ou polígono.</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="173"/>
         <source>Please, insert the meridian convergence.</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Por favor, insira a convergência meridiana.</translation>
     </message>
 </context>
 <context>
@@ -96,27 +65,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../kappaAndConvergence/calculateKappaAndConvergence.py" line="172"/>
         <source>UTM Zone = </source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Zona UTM = </translation>
     </message>
     <message>
         <location filename="../kappaAndConvergence/calculateKappaAndConvergence.py" line="173"/>
         <source>Central Meridian = </source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Meridiano Central =</translation>
     </message>
     <message>
         <location filename="../kappaAndConvergence/calculateKappaAndConvergence.py" line="174"/>
         <source>Kappa = </source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Kappa =</translation>
     </message>
     <message>
         <location filename="../kappaAndConvergence/calculateKappaAndConvergence.py" line="175"/>
         <source>Convergence DMS = </source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Convergencia em Grau Minuto Segundo = </translation>
     </message>
     <message>
         <location filename="../kappaAndConvergence/calculateKappaAndConvergence.py" line="176"/>
         <source>Convergence Decimal Degrees = </source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Convergência em Grau decimal = </translation>
     </message>
 </context>
 <context>
@@ -124,107 +93,107 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../kappaAndConvergence/ui_kappaAndConvergence.ui" line="14"/>
         <source>Kappa and Convergence</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Kappa e Convergência</translation>
     </message>
     <message>
         <location filename="../kappaAndConvergence/ui_kappaAndConvergence.ui" line="22"/>
         <source>Longitude</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Longitude</translation>
     </message>
     <message>
         <location filename="../kappaAndConvergence/ui_kappaAndConvergence.ui" line="73"/>
         <source>Use decimal degree values</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Use grau decimal</translation>
     </message>
     <message>
         <location filename="../kappaAndConvergence/ui_kappaAndConvergence.ui" line="53"/>
         <source>Latitude</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Latitude</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="58"/>
         <source>Calculate</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Calcular</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="65"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Limpar</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="14"/>
         <source>Azimuths and Distances</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Azimutes e Distâncias</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="24"/>
         <source>Inform the Meridian Convergence:</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Informe a Convergencia Meridiana:</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="31"/>
         <source>Use decimal degrees</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Use grau decimal</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="40"/>
         <source>Calculate convergence based on the centroid</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Calcular a convergência baseada no centróide</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="49"/>
         <source>Save Files</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Salvar Arquivos</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="79"/>
         <source>Geometry Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Descrição da Geometria</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="91"/>
         <source>Number of Decimal places for coordinates:</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Número de casas decimais das coordenadas:</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="111"/>
         <source>Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Vértice</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="116"/>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">E</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="121"/>
         <source>N</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">N</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="126"/>
         <source>Side</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Lado</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="131"/>
         <source>Planar Azimuth</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Azimute Planar</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="136"/>
         <source>Real Azimuth</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Azimute Real</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="141"/>
         <source>Distance</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Distância</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/ui_azimuthsAndDistances.ui" line="146"/>
         <source>Confronting</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Confrontante</translation>
     </message>
     <message encoding="UTF-8">
         <location filename="../azimuthsAndDistances/ui_memorialGenerator.ui" line="14"/>
@@ -677,37 +646,37 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../azimuthsAndDistances/memorialGenerator.py" line="245"/>
         <source>Attention!</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Atenção!</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/memorialGenerator.py" line="173"/>
         <source>A directory should be selected!</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Um diretório deve ser selecionado!</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/memorialGenerator.py" line="245"/>
         <source>Select at least one file type!</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Selecione pelo meno um tipo de arquivo!</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/memorialGenerator.py" line="247"/>
         <source>Information!</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Informação!</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/memorialGenerator.py" line="247"/>
         <source>Files created successfully!</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Arquivos criados com sucesso!</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/memorialGenerator.py" line="251"/>
         <source>ERROR!</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">ERRO!</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/memorialGenerator.py" line="251"/>
         <source>You must be trying to modify or replace an existing file that is being used by another program.</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Você deve estar tentando modificar ou substituir um arquivo existente que está sendo usado por outro programa.</translation>
     </message>
 </context>
 <context>
@@ -720,7 +689,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../spugeo_memorial.py" line="167"/>
         <source>Generates descriptive memorials</source>
-        <translation type="unfinished"></translation>
+        <translation type="finished">Gera memoriais descritivos</translation>
     </message>
 </context>
 <context>
@@ -728,17 +697,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../spugeo_memorial_dialog.py" line="81"/>
         <source>Warning!</source>
-        <translation type="unfinished">Atenção!</translation>
+        <translation type="finished">Atenção!</translation>
     </message>
     <message>
         <location filename="../spugeo_memorial_dialog.py" line="81"/>
         <source>Please, open a layer and select a line or polygon feature.</source>
-        <translation type="unfinished">Por favor, abra uma camada e selecione uma linha ou polígono.</translation>
+        <translation type="finished">Por favor, abra uma camada e selecione uma linha ou polígono.</translation>
     </message>
     <message>
         <location filename="../spugeo_memorial_dialog.py" line="79"/>
         <source>One and only one feature must be selected to perform the calculations.</source>
-        <translation type="unfinished">Uma e somente uma feição deve estar selecionada para realizar os cálculos.</translation>
+        <translation type="finished">Uma e somente uma feição deve estar selecionada para realizar os cálculos.</translation>
     </message>
 </context>
 </TS>
