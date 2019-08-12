@@ -47,7 +47,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="125"/>
         <source>The limit of a patrimonial area must be a single part geometry.</source>
-        <translation type="finished">O limite de uma área patrimonial não pode ser uma geometria multiparte.</translation>
+        <translation type="finished"> O limite de uma área patrimonial não pode ser uma geometria multiparte.​​ Refaça a operação após executar: Vetor>Geometrias> Multipartes para partes simples.</translation>
     </message>
     <message>
         <location filename="../azimuthsAndDistances/azimuthsAndDistances.py" line="140"/>
