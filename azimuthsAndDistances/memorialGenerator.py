@@ -578,17 +578,22 @@ class MemorialGenerator(QDialog, FORM_CLASS):
 
         h=H(outlinelevel=1, stylename=h1style, text=self.title.upper())
         self.textdoc.text.addElement(h)
-        h=H(outlinelevel=1, stylename=h1style, text=self.title2.upper())
-        self.textdoc.text.addElement(h)
 
-        h=H(outlinelevel=1, stylename=h1style2, text=self.superinte)
-        self.textdoc.text.addElement(h)
+        if len(self.title2)!= 0:
+            h=H(outlinelevel=1, stylename=h1style, text=self.title2.upper())
+            self.textdoc.text.addElement(h)
 
-        h=H(outlinelevel=1, stylename=h1style2a, text=self.division)
-        self.textdoc.text.addElement(h)
+        if len(self.superinte) != 0:
+            h=H(outlinelevel=1, stylename=h1style2, text=self.superinte)
+            self.textdoc.text.addElement(h)
 
-        h=H(outlinelevel=1, stylename=addressTitle, text=self.adresstitle)
-        self.textdoc.text.addElement(h)
+        if len(self.division) != 0:
+            h=H(outlinelevel=1, stylename=h1style2a, text=self.division)
+            self.textdoc.text.addElement(h)
+
+        if len(self.adresstitle) != 0:
+            h=H(outlinelevel=1, stylename=addressTitle, text=self.adresstitle)
+            self.textdoc.text.addElement(h)
 
         h=H(outlinelevel=1, stylename=self.bodystyle, text='\n')
         self.textdoc.text.addElement(h)
@@ -685,7 +690,40 @@ class MemorialGenerator(QDialog, FORM_CLASS):
 
         #self.textdoc.text.addElement(table)
 
-        
+
+        p = P(text=u"Imóvel: " + str(self.denominationAreaImovel), stylename=self.bodystyle)
+        self.textdoc.text.addElement(p)
+
+        p = P(text=u"Proprietário: " + self.proprietarioImovel)
+        self.textdoc.text.addElement(p)
+
+        p = P(text=u"Endereço: " + self.adressImovel)
+        self.textdoc.text.addElement(p)
+
+        p = P(text=u"Município/UF: " + self.cityImovel + '/' + self.ufImovel, stylename=texttable)
+        self.textdoc.text.addElement(p)
+
+        p = P(text=u"Perímetro (m): " + str(self.perimeter).replace('.', ','), stylename=texttable)
+        self.textdoc.text.addElement(p)
+
+        p = P(text=u"Área (m²): " + str(self.areaMetroQuad).replace('.', ','), stylename=texttable)
+        self.textdoc.text.addElement(p)
+
+        p = P(text=u"RIP: " + self.ripEdit.text(), stylename=texttable)
+        self.textdoc.text.addElement(p)
+
+        p = P(text="NBP: " + self.nbpImovel, stylename=texttable)
+        self.textdoc.text.addElement(p)
+
+        p = P(text=u"Matrícula: " + self.matricula, stylename=texttable)
+        self.textdoc.text.addElement(p)
+
+        p = P(text=u"Comarca: " + self.comarca, stylename=texttable)
+        self.textdoc.text.addElement(p)
+
+        p = P(text=u"Código INCRA: " + self.codIncraEdit.text(), stylename=texttable)
+        self.textdoc.text.addElement(p)
+
 
         h=H(outlinelevel=1, stylename=self.bodystyle, text='\n')
         self.textdoc.text.addElement(h)
