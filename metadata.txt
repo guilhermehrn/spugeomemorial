@@ -16,7 +16,7 @@ email=guilherme.henrique@planejamento.gov.br
 
 about=Calculates azimuths and distances for a selected feature. The feature can be either a line or a polygon. Generates descriptive memorials in the format of the SPU of the Federal Government of Brazil. This add-on is a modified version of the Azimuth Distance Calculator plugin.
 
-homepage = https://github.com/guilhermehrn/spugeomemorial.wiki.git
+
 tracker=https://github.com/guilhermehrn/spugeo-memorial/issues
 repository=https://github.com/guilhermehrn/spugeo-memorial.git
 # End of mandatory metadata
@@ -24,9 +24,11 @@ repository=https://github.com/guilhermehrn/spugeo-memorial.git
 # Recommended items:
 
 # Uncomment the following line and add your changelog:
-# changelog= 0.2 - Correction of bugs related to the type Multipolygon.
-             0.3 - Modification of metadata in generated documents.
-                 - Correction of bugs.
+changelog= Version 0.2 (11/14/2018):
+                - Correction of bugs related to the type Multipolygon.
+           Version 0.3 (08/16/2019):
+                - Modification of metadata in generated documents.
+                - Correction of bugs.
 
 
 # Tags are comma separated with spaces allowed
