@@ -12,7 +12,7 @@ qgisMinimumVersion=3.0
 description=Generates descriptive memorials in the format of the SPU of the Federal Government of Brazil
 version=0.3
 author=Guilherme Henrique
-email=guilherme.henrique@planejamento.gov.br
+email=guilherme.nascimento@planejamento.gov.br
 
 about=Calculates azimuths and distances for a selected feature. The feature can be either a line or a polygon. Generates descriptive memorials in the format of the SPU of the Federal Government of Brazil. This add-on is a modified version of the Azimuth Distance Calculator plugin.
 

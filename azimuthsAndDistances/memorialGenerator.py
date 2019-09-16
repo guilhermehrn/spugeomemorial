@@ -621,7 +621,6 @@ class MemorialGenerator(QDialog, FORM_CLASS):
 
         p = P(text=u"Município/UF: " + self.cityImovel + '/' + self.ufImovel, stylename=texttable)
         self.textdoc.text.addElement(p)
-
         p = P(text=u"Perímetro (m): " + str(self.perimeter).replace('.', ','), stylename=texttable)
         self.textdoc.text.addElement(p)
 
