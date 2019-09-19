@@ -44,6 +44,10 @@ from .memorialGenerator import MemorialGenerator
 from ..kappaAndConvergence.calculateKappaAndConvergence import CalculateKappaAndConvergenceDialog
 
 
+
+
+
+
 class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
     """Class that calculates azimuths and distances among vertexes in a linestring.
     """
@@ -125,27 +129,12 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         """Verifies the geometry type.
         """
         if self.geom.isMultipart():
-            #Pegando a primeira geoemetria na lista
-            layer = self.multiplePartToSingleParte()
-            features = layer.getFeatures()
-
-            print(" ############ layer: ", layer.getGeometry(2))
-            print("############## features: ", features)
-
-            for feature in features:
-                geom = feature
-                geomsingletype = QgsWkbTypes.isSingleType(geom.wkbType())
-                print("########## geomSingleType", geomsingletype)
-
-
-
-
-
-
-            #print("###### layer.GetNextFeature()", layer.GetNextFeature())
-            #self.geom = layer[0].geomtry()
-            QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("The limit of a patrimonial area must be a single part geometry."))
-            return False
+            #QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("The limit of a patrimonial area must be a single part geometry."))
+            #return False
+            self.points =  self.azimuthPoints()
+            polygon = QgsGeometry.fromPolygon([self.points])
+            self.geom = polygon
+            print("Oia", polygon)
 
         #if self.geom.type() == QGis.Line:
         if self.geom.type() == QgsWkbTypes.LineGeometry:
@@ -165,12 +154,13 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
     def calculate(self):
         """Constructs a list with distances and azimuths.
         """
+        points = self.points
 
         self.perimeter = 0
         self.distancesAndAzimuths = list()
-        for i in range(0,len(self.points)-1):
-            before = self.points[i]
-            after = self.points[i+1]
+        for i in range(0, len(points)-1):
+            before = points[i]
+            after = points[i+1]
             distance = math.sqrt(before.sqrDist(after))
             azimuth = before.azimuth(after)
             if azimuth < 0:
@@ -268,51 +258,38 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
                 #     print (str(self.tableWidget.item(i, 7).text()))
 #     self.tableWidget.setItem(i, 7, itemConfronting)
 
-    # Transforma uma geometria multiple parte para uma geometria single parte
-    def multiplePartToSingleParte(self):
+    # Colecta os pontos de uma geoemtria na ordem dos seus elemetos
+    def azimuthPoints(self):
 
-        layer = self.iface.mapCanvas().currentLayer()
-        layer.selectAll()
-        clone_layer = processing.run("native:saveselectedfeatures", {'INPUT': layer, 'OUTPUT': 'memory:'})['OUTPUT']
-        #print ("AQUI:", clone_layer.id)
-        remove_list = []
-
-
-        for feature  in layer.selectedFeatures():
-            geom = feature.geometry()
-
-
-            # print("\n ########### feature.GetGeometryRef().GetGeometryName() :", feature.getGeometryRef().GetGeometryName())
-            # check if feature geometry is multipart
-            if geom.isMultipart():
-                remove_list.append(feature.id)
-                print ("Oia ",feature.id)
-                new_features = []
-                temp_feature = QgsFeature(feature)
-                #create a new feature using the geometry of each part
-                for part in geom.asGeometryCollection():
-                    temp_feature.setGeometry(part)
-                    new_features.append(QgsFeature(temp_feature))
-                #add new features to layer
-                clone_layer.addFeatures(new_features)
-
-
-        #remove the original (multipart) features from layer
-
-        # if len(remove_list) > 0:
-        #     for i in remove_list:
-        #         clone_layer.deleteFeature(id)
-
-        for feature in clone_layer.getFeatures():
-            if feature.geometry.isMultipart():
-                clone_layer.deleteFeature(feature.id)
+            listPoint = []
+            geom = self.geom
+            multiPolygon = geom.asMultiPolygon()
+            print("geom\n", geom)
+            print("\n multiPolygon", geom.asMultiPolygon())
+            dimMultipolygon = len(multiPolygon)
+            print("\n dimMultipolygon", dimMultipolygon)
+            #Percorrendo o multipolygon
+            for i in range(0, dimMultipolygon):
+                polygon = multiPolygon[i]
+                dimPolygon = len(polygon[i])
+                print("\n polygon dimPolygon", polygon, dimPolygon)
+                print("\n type(polygon)", type(polygon[0]))
+                #Percorrendo um polygon
+                points = polygon.asPoint()
+                dimPoints = len(points)
+                print("\n dimPoints", dimPoints)
+                for j in range(0, dimPoints - 1):
+                    ponto1 = points[j]
+                    pontoIndex = j
+                    ponto2 = points[pontoIndex + 1]
+                    print("\n Par", ponto1, ponto2)
+                    listPoint.append(ponto1)
+                    listPoint.append(ponto2)
 
 
+            print("\n listPoint", listPoint)
+            return listPoint
 
-        for feature in clone_layer.selectedFeatures():
-            print("\n ####feature clone_layer", feature)
-
-        return clone_layer
 
     def clearTable(self):
         self.tableWidget.setRowCount(0)
