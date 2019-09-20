@@ -132,7 +132,8 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             #QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("The limit of a patrimonial area must be a single part geometry."))
             #return False
             self.points =  self.azimuthPoints()
-            polygon = QgsGeometry.fromPolygon([self.points])
+            print("self.points", self.points)
+            polygon = QgsGeometry.fromPolygonXY([self.points])
             self.geom = polygon
             print("Oia", polygon)
 
@@ -263,31 +264,15 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
 
             listPoint = []
             geom = self.geom
-            multiPolygon = geom.asMultiPolygon()
-            print("geom\n", geom)
-            print("\n multiPolygon", geom.asMultiPolygon())
-            dimMultipolygon = len(multiPolygon)
-            print("\n dimMultipolygon", dimMultipolygon)
-            #Percorrendo o multipolygon
-            for i in range(0, dimMultipolygon):
-                polygon = multiPolygon[i]
-                dimPolygon = len(polygon[i])
-                print("\n polygon dimPolygon", polygon, dimPolygon)
-                print("\n type(polygon)", type(polygon[0]))
-                #Percorrendo um polygon
-                points = polygon.asPoint()
-                dimPoints = len(points)
-                print("\n dimPoints", dimPoints)
-                for j in range(0, dimPoints - 1):
-                    ponto1 = points[j]
-                    pontoIndex = j
-                    ponto2 = points[pontoIndex + 1]
-                    print("\n Par", ponto1, ponto2)
-                    listPoint.append(ponto1)
-                    listPoint.append(ponto2)
+            listMultiPolygon = geom.asMultiPolygon()
+            for multiPolygon in listMultiPolygon:
+                print("\n multiPolygon, type(multiPolygon)", multiPolygon, type(multiPolygon))
+                for polygon in multiPolygon:
+                    print("\n polygon", polygon)
+                    for ponto in polygon:
+                        print("\n ponto", ponto)
+                        listPoint.append(ponto)
 
-
-            print("\n listPoint", listPoint)
             return listPoint
 
 
