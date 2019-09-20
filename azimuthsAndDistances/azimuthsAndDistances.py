@@ -22,31 +22,19 @@
 
 from builtins import str
 from builtins import range
-
-
-import os
-#from PyQt4 import uic
-#from PyQt4.QtGui import QDialog, QTableWidgetItem, QMessageBox
-#from qgis.core import QGis, QgsGeometry
-
 from qgis.PyQt import uic
 from qgis.PyQt.QtWidgets import QDialog, QTableWidgetItem, QMessageBox
 from qgis.core import QgsWkbTypes, QgsGeometry, QgsFeature
+from .memorialGenerator import MemorialGenerator
+from ..kappaAndConvergence.calculateKappaAndConvergence import CalculateKappaAndConvergenceDialog
+from decimal import Decimal
 
+import os
 import processing
 import math
-from decimal import Decimal
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'ui_azimuthsAndDistances.ui'))
-
-from .memorialGenerator import MemorialGenerator
-from ..kappaAndConvergence.calculateKappaAndConvergence import CalculateKappaAndConvergenceDialog
-
-
-
-
-
 
 class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
     """Class that calculates azimuths and distances among vertexes in a linestring.
@@ -70,7 +58,12 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         self.convergenceButton.clicked.connect(self.calculateConvergence)
         self.spinBox.valueChanged.connect(self.fillTable)
 
+
     def calculateConvergence(self):
+        """Calculates the convergence.
+        :param: self
+        :return:
+        """
         convergenceCalculator = CalculateKappaAndConvergenceDialog(self.iface)
         (a, b) = convergenceCalculator.getSemiMajorAndSemiMinorAxis()
 
@@ -88,7 +81,13 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
 
                 self.lineEdit.setText(str(convergence))
 
+
     def setClockWiseRotation(self, points):
+        """Determines angulares rotation given a points list.
+        :param: self, points:
+        :return: angulares list.
+        """
+
         sum = 0
         for i in range(len(points) - 1):
             sum += (points[i+1].x() - points[i].x())*(points[i+1].y() + points[i].y())
@@ -98,7 +97,13 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         else:
             return points[::-1]
 
+
     def setFirstPointToNorth(self, coords, yMax):
+        """Returns first point coordinate for putting to North.
+        :param self, coords:
+        :param yMax:
+        :return: list
+        """
         if coords[0].y() == yMax:
             return coords
 
@@ -111,7 +116,12 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
 
         return coords[i:] + firstPart
 
+
     def saveFiles(self):
+        """Save files
+        :param: self
+        :return:
+        """
         if (not self.distancesAndAzimuths) or (not self.points):
             QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("Click on calculate button first to generate the needed data."))
         else:
@@ -125,17 +135,17 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             d.exec_()
             #d.getConfigurationMemorial()
 
+
     def isValidType(self):
-        """Verifies the geometry type.
+        """Verifies the geometry type. If the geometrie if is a point, false will returned.
+        :param: self
+        :return: bool
         """
         if self.geom.isMultipart():
-            #QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("The limit of a patrimonial area must be a single part geometry."))
-            #return False
+
             self.points =  self.azimuthPoints()
-            print("self.points", self.points)
             polygon = QgsGeometry.fromPolygonXY([self.points])
             self.geom = polygon
-            print("Oia", polygon)
 
         #if self.geom.type() == QGis.Line:
         if self.geom.type() == QgsWkbTypes.LineGeometry:
@@ -152,8 +162,11 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("The selected geometry should be a Line or a Polygon."))
             return False
 
+
     def calculate(self):
-        """Constructs a list with distances and azimuths.
+        """Constructs  a list with distances and azimuths.
+        :param: self
+        :return: point list
         """
         points = self.points
 
@@ -171,8 +184,11 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
 
         return self.distancesAndAzimuths
 
+
     def fillTable(self):
         """Makes the CSV.
+        :param: self
+        :return:
         """
         decimalPlaces = self.spinBox.value()
         q = Decimal(10)**-decimalPlaces
@@ -255,28 +271,29 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
                 self.tableWidget.setItem(i, 6, itemDistance)
                 itemConfronting = QTableWidgetItem("")
 
-                # if str(self.tableWidget.item(i, 7).text()) != "":
-                #     print (str(self.tableWidget.item(i, 7).text()))
-#     self.tableWidget.setItem(i, 7, itemConfronting)
 
-    # Colecta os pontos de uma geoemtria na ordem dos seus elemetos
     def azimuthPoints(self):
+        """Collects a geometrie points according to its componentes orderes.
+        :param self
+        :return: geometrie points
+        """
 
-            listPoint = []
+        listPoint = []
             geom = self.geom
             listMultiPolygon = geom.asMultiPolygon()
             for multiPolygon in listMultiPolygon:
-                print("\n multiPolygon, type(multiPolygon)", multiPolygon, type(multiPolygon))
                 for polygon in multiPolygon:
-                    print("\n polygon", polygon)
                     for ponto in polygon:
-                        print("\n ponto", ponto)
                         listPoint.append(ponto)
 
             return listPoint
 
 
     def clearTable(self):
+        """clear a table
+        :param: self
+        :return: concated string composed by degree, minutes, seconds
+        """
         self.tableWidget.setRowCount(0)
 
     def dd2dms(self, dd):

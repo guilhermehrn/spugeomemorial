@@ -22,23 +22,15 @@
 
 from __future__ import absolute_import
 from builtins import object
-import os
-
-#from PyQt4.QtCore import QCoreApplication
-#from PyQt4.QtGui import QIcon, QAction
-#from PyQt4.QtCore import QSettings, QTranslator, qVersion
-
 from qgis.PyQt.QtCore import QCoreApplication
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 from qgis.PyQt.QtCore import QSettings, QTranslator, qVersion
-
-
 from . import resources_rc
-
-#import resources_rc
-
 from .spugeo_memorial_dialog import SpuGeoMemorialDialog
+
+import os
+
 
 try:
     import ptvsd
