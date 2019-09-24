@@ -38,8 +38,12 @@ FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'ui_kappaAndConvergence.ui'))
 
 class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
+    """Contains methods to calulate  Kappa and convergence
+    """
     def __init__(self, iface):
-        """Constructor.
+        """Constructor
+        :param iface:
+        :return:
         """
         QDialog.__init__( self )
         self.setupUi( self )
@@ -55,6 +59,8 @@ class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
 
     def calculateKappa(self):
         """Calculates the linear deformation factor (Kappa) for UTM projections
+        :param:
+        :return: Kappa
         """
         kappaZero = 0.9996
         latitude = float(self.latEdit.text())
@@ -71,6 +77,9 @@ class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
 
     def calculateConvergence(self, a, b):
         """Calculates the meridian convergence
+        :param a:
+        :param b:
+        :return: convergence
         """
         latitude = float(self.latEdit.text())
         longitude = float(self.longEdit.text())
@@ -78,6 +87,11 @@ class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
 
     def calculateConvergence2(self, longitude, latitude, a, b):
         """Calculates the meridian convergence
+        :param longitude:
+        :param latitude:
+        :param a:
+        :param b:
+        :return: meridian convergence
         """
         centralMeridian = int(abs(longitude)/6)*6 + 3
         if longitude < 0:
@@ -103,6 +117,8 @@ class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
 
     def getSemiMajorAndSemiMinorAxis(self):
         """Obtains the semi major axis and semi minor axis from the used ellipsoid
+        :param:
+        :returns: semi major axis and semi minor axis:
         """
         currentLayer = self.iface.mapCanvas().currentLayer()
         distanceArea = QgsDistanceArea()
@@ -114,6 +130,8 @@ class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
 
     def getPlanarCoordinates(self):
         """Transform the geographic coordinates to projected coordinates
+        :param:
+        :return: projected coordinates
         """
         latitude = float(self.latEdit.text())
         longitude = float(self.longEdit.text())
@@ -129,7 +147,11 @@ class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
 
     def getGeographicCoordinates(self, x, y):
         """Transform the planar coordinates to geographic coordinates
+        :param x:
+        :param y:
+        :return: geografic coordinates
         """
+
         crsSrc = self.iface.mapCanvas().currentLayer().crs()
         crsDest = QgsCoordinateReferenceSystem(crsSrc.geographicCrsAuthId())
 
@@ -140,6 +162,10 @@ class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
         return geoPoint
 
     def getCentralMeridian(self, longitude):
+        """Get central meridian
+        :param longitude:
+        :return: central meridian
+        """
         centralMeridian = int(abs(longitude)/6)*6 + 3
         if longitude < 0:
             centralMeridian = centralMeridian*(-1)
@@ -148,6 +174,8 @@ class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
 
     def fillTextEdit(self):
         """Fills the text area with the calculated information
+        :param:
+        :return:
         """
         self.textEdit.clear()
 
@@ -176,9 +204,17 @@ class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
         self.textEdit.append(self.tr("Convergence Decimal Degrees = ")+str(c)+"\n")
 
     def clearTextEdit(self):
+        """Clear text edit
+        :param:
+        :return:
+        """
         self.textEdit.clear()
 
     def dd2dms(self, dd):
+        """Calculates dd2dmis
+        :param dd:
+        :return: concated  degree and time string
+        """
         is_positive = dd >= 0
         dd = abs(dd)
         minutes,seconds = divmod(dd*3600,60)

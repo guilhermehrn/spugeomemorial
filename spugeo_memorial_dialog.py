@@ -40,8 +40,13 @@ from .kappaAndConvergence.calculateKappaAndConvergence import CalculateKappaAndC
 from .azimuthsAndDistances.azimuthsAndDistances import AzimuthsAndDistancesDialog
 
 class SpuGeoMemorialDialog(QDialog, FORM_CLASS):
+    """Contains Spu geomemorial dialog method
+    """
     def __init__(self, iface):
-        """Constructor."""
+        """Constructor.
+        :param
+        :return
+        """
         QDialog.__init__(self)
         #super(SpuGeoMemorialDialog, self).__init__(parent)
         # Set up the user interface from Designer.
@@ -60,6 +65,10 @@ class SpuGeoMemorialDialog(QDialog, FORM_CLASS):
         self.azimuthsAndDistancesButton.clicked.connect(self.calculateAzimuths)
 
     def calculateKappa(self):
+        """Calculates Kappa
+        :param:
+        :return:
+        """
         currentLayer = self.iface.mapCanvas().currentLayer()
         if currentLayer:
             d = CalculateKappaAndConvergenceDialog(self.iface)
@@ -68,6 +77,10 @@ class SpuGeoMemorialDialog(QDialog, FORM_CLASS):
             QMessageBox.warning(self.iface.mainWindow(), self.tr("Warning!"), self.tr("Please, open a layer and select a line or polygon feature."))
 
     def calculateAzimuths(self):
+        """Calculates Azimuths
+        :param:
+        :return:
+        """
         currentLayer = self.iface.mapCanvas().currentLayer()
         if currentLayer:
             selectedFeatures = len(currentLayer.selectedFeatures())

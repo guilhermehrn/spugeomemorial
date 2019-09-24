@@ -20,9 +20,9 @@ VERBOSE = False
 
 def main(parameters, arguments):
     """Main entry point.
-
     :param parameters: Command line parameters.
     :param arguments: Command line arguments.
+    :return
     """
     address = "%s://%s:%s@%s:%s%s" % (
         PROTOCOL,
@@ -60,6 +60,8 @@ def hide_password(url, start=6):
 
     :param start: Position of start of password.
     :type start: int
+
+    :return: url
     """
     start_position = url.find(':', start) + 1
     end_position = url.find('@')

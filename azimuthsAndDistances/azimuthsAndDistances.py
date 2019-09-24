@@ -23,11 +23,7 @@
 from builtins import str
 from builtins import range
 
-
 import os
-#from PyQt4 import uic
-#from PyQt4.QtGui import QDialog, QTableWidgetItem, QMessageBox
-#from qgis.core import QGis, QgsGeometry
 
 from qgis.PyQt import uic
 from qgis.PyQt.QtWidgets import QDialog, QTableWidgetItem, QMessageBox
@@ -44,15 +40,13 @@ from .memorialGenerator import MemorialGenerator
 from ..kappaAndConvergence.calculateKappaAndConvergence import CalculateKappaAndConvergenceDialog
 
 
-
-
-
-
 class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
     """Class that calculates azimuths and distances among vertexes in a linestring.
     """
     def __init__(self, iface, geometry):
-        """Constructor.
+        """Constructor
+        :param iface:
+        :param geometry:
         """
         QDialog.__init__( self )
         self.setupUi( self )
@@ -71,6 +65,10 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         self.spinBox.valueChanged.connect(self.fillTable)
 
     def calculateConvergence(self):
+        """Calculates convergence
+        :param:
+        :return:
+        """
         convergenceCalculator = CalculateKappaAndConvergenceDialog(self.iface)
         (a, b) = convergenceCalculator.getSemiMajorAndSemiMinorAxis()
 
@@ -79,16 +77,17 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             selectedFeatures = len(currentLayer.selectedFeatures())
             if selectedFeatures == 1:
                 selectedFeature = currentLayer.selectedFeatures()[0]
-
                 centroid = selectedFeature.geometry().centroid()
                 geoPoint = convergenceCalculator.getGeographicCoordinates(centroid.asPoint().x(), centroid.asPoint().y())
                 self.centralMeridian = convergenceCalculator.getCentralMeridian(geoPoint.x())
-
                 convergence = convergenceCalculator.calculateConvergence2(geoPoint.x(), geoPoint.y(), a, b)
-
                 self.lineEdit.setText(str(convergence))
 
     def setClockWiseRotation(self, points):
+        """set clockwise Rotation
+        :param points:
+        :return: points
+        """
         sum = 0
         for i in range(len(points) - 1):
             sum += (points[i+1].x() - points[i].x())*(points[i+1].y() + points[i].y())
@@ -99,6 +98,11 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             return points[::-1]
 
     def setFirstPointToNorth(self, coords, yMax):
+        """set first point to north
+        :param coords:
+        :param yMax:
+        :return: vector sum
+        """
         if coords[0].y() == yMax:
             return coords
 
@@ -112,6 +116,10 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         return coords[i:] + firstPart
 
     def saveFiles(self):
+        """save files
+        :param:
+        :return:
+        """
         if (not self.distancesAndAzimuths) or (not self.points):
             QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("Click on calculate button first to generate the needed data."))
         else:
@@ -127,6 +135,8 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
 
     def isValidType(self):
         """Verifies the geometry type.
+        :param:
+        :return:
         """
         if self.geom.isMultipart():
             #QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("The limit of a patrimonial area must be a single part geometry."))
@@ -152,13 +162,16 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("The selected geometry should be a Line or a Polygon."))
             return False
 
+
     def calculate(self):
-        """Constructs a list with distances and azimuths.
+        """Calculates and Constructs a list with distances and azimuths.
+        :param:
+        :return: list with distances and azimuths
         """
         points = self.points
-
         self.perimeter = 0
         self.distancesAndAzimuths = list()
+
         for i in range(0, len(points)-1):
             before = points[i]
             after = points[i+1]
@@ -171,8 +184,11 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
 
         return self.distancesAndAzimuths
 
+
     def fillTable(self):
-        """Makes the CSV.
+        """fills and makes the CSV.
+        :param:
+        :return:
         """
         decimalPlaces = self.spinBox.value()
         q = Decimal(10)**-decimalPlaces
@@ -257,29 +273,37 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
 
                 # if str(self.tableWidget.item(i, 7).text()) != "":
                 #     print (str(self.tableWidget.item(i, 7).text()))
-#     self.tableWidget.setItem(i, 7, itemConfronting)
+                #     self.tableWidget.setItem(i, 7, itemConfronting)
 
-    # Colecta os pontos de uma geoemtria na ordem dos seus elemetos
+
     def azimuthPoints(self):
+        """Colecta os pontos de uma geoemtria na ordem dos seus elemetos
+        :param:
+        :return: ponits list
+        """
+        listPoint = []
+        geom = self.geom
+        listMultiPolygon = geom.asMultiPolygon()
+        for multiPolygon in listMultiPolygon:
+            for polygon in multiPolygon:
+                for ponto in polygon:
+                    listPoint.append(ponto)
 
-            listPoint = []
-            geom = self.geom
-            listMultiPolygon = geom.asMultiPolygon()
-            for multiPolygon in listMultiPolygon:
-                print("\n multiPolygon, type(multiPolygon)", multiPolygon, type(multiPolygon))
-                for polygon in multiPolygon:
-                    print("\n polygon", polygon)
-                    for ponto in polygon:
-                        print("\n ponto", ponto)
-                        listPoint.append(ponto)
-
-            return listPoint
+        return listPoint
 
 
     def clearTable(self):
+        """clear table
+        :param
+        :return:
+        """
         self.tableWidget.setRowCount(0)
 
     def dd2dms(self, dd):
+        """
+        :param dd:
+        :return: cnoncated string of degree and time
+        """
         is_positive = dd >= 0
         dd = abs(dd)
         minutes, seconds = divmod(dd*3600,60)
