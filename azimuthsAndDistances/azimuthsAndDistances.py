@@ -279,14 +279,14 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         """
 
         listPoint = []
-            geom = self.geom
-            listMultiPolygon = geom.asMultiPolygon()
-            for multiPolygon in listMultiPolygon:
-                for polygon in multiPolygon:
-                    for ponto in polygon:
-                        listPoint.append(ponto)
+        geom = self.geom
+        listMultiPolygon = geom.asMultiPolygon()
+        for multiPolygon in listMultiPolygon:
+            for polygon in multiPolygon:
+                for ponto in polygon:
+                    listPoint.append(ponto)
 
-            return listPoint
+        return listPoint
 
 
     def clearTable(self):
