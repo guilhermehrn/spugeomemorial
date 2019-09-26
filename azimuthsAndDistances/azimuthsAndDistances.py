@@ -57,6 +57,7 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         self.distancesAndAzimuths = None
         self.area = self.geom.area()
 
+
         # Connecting SIGNAL/SLOTS for the Output button
         self.calculateButton.clicked.connect(self.fillTable)
         self.clearButton.clicked.connect(self.clearTable)
@@ -83,6 +84,10 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
                 convergence = convergenceCalculator.calculateConvergence2(geoPoint.x(), geoPoint.y(), a, b)
                 self.lineEdit.setText(str(convergence))
 
+
+            self.calculateButton.setEnabled(True)
+
+
     def setClockWiseRotation(self, points):
         """set clockwise Rotation
         :param points:
@@ -96,6 +101,7 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             return points
         else:
             return points[::-1]
+
 
     def setFirstPointToNorth(self, coords, yMax):
         """set first point to north
@@ -114,6 +120,7 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
                 break
 
         return coords[i:] + firstPart
+
 
     def saveFiles(self):
         """save files
@@ -142,10 +149,8 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             #QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("The limit of a patrimonial area must be a single part geometry."))
             #return False
             self.points =  self.azimuthPoints()
-            print("self.points", self.points)
             polygon = QgsGeometry.fromPolygonXY([self.points])
             self.geom = polygon
-            print("Oia", polygon)
 
         #if self.geom.type() == QGis.Line:
         if self.geom.type() == QgsWkbTypes.LineGeometry:
@@ -172,6 +177,7 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         self.perimeter = 0
         self.distancesAndAzimuths = list()
 
+
         for i in range(0, len(points)-1):
             before = points[i]
             after = points[i+1]
@@ -182,6 +188,8 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             self.distancesAndAzimuths.append((distance, azimuth))
             self.perimeter += distance
 
+        self.clearButton.setEnabled(True)
+        self.saveFilesButton.setEnabled(True)
         return self.distancesAndAzimuths
 
 
@@ -190,6 +198,7 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         :param:
         :return:
         """
+
         decimalPlaces = self.spinBox.value()
         q = Decimal(10)**-decimalPlaces
 
@@ -298,6 +307,8 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         :return:
         """
         self.tableWidget.setRowCount(0)
+        self.clearButton.setEnabled(False)
+        self.saveFilesButton.setEnabled(False)
 
     def dd2dms(self, dd):
         """
@@ -313,3 +324,4 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         minutes = int(minutes)
 
         return degrees + u"\u00b0" + str(minutes).zfill(2) + "'" + "%0.2f"%(seconds) + "''"
+

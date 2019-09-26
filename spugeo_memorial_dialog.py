@@ -44,7 +44,7 @@ class SpuGeoMemorialDialog(QDialog, FORM_CLASS):
     """
     def __init__(self, iface):
         """Constructor.
-        :param
+        :param: iface
         :return
         """
         QDialog.__init__(self)
@@ -81,6 +81,7 @@ class SpuGeoMemorialDialog(QDialog, FORM_CLASS):
         :param:
         :return:
         """
+
         currentLayer = self.iface.mapCanvas().currentLayer()
         if currentLayer:
             selectedFeatures = len(currentLayer.selectedFeatures())
