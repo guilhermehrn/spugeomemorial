@@ -106,6 +106,8 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         :param
         :return:
         """
+
+
         #config da aba Orgao expeditor
         self.settings.beginGroup('memorial/Config/Last_Memorial')
         self.settings.setValue('orgaoExpeditorConf', self.OrgaoExpeditorEdit.text())
@@ -255,6 +257,7 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         self.copyAndRenameFiles()
         try:
             self.storeConfigurationMemorial()
+            self.CheckMemorialGenerator()
             if self.memorialSinteticHtml.isChecked():
                 self.createSimpleMemorial()
 
@@ -983,3 +986,10 @@ class MemorialGenerator(QDialog, FORM_CLASS):
                 ptex += '<font size=11 name="Times-Bold">E %s m</font>' %self.tableWidget.item(i+1,1).text().replace('.', ',')
 
         return ptex
+
+
+    def CheckMemorialGenerator(self):
+
+        if self.OrgaoExpeditorEdit.text() == " " or self.self.secretariaEdit.text():
+            self.OrgaoExpeditorEdit.setStyleSheet("border: 2px solid red")
+            self.secretariaEdit.setStyleSheet("border: 2px solid red")

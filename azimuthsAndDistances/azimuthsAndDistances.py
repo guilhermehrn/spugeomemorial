@@ -214,7 +214,7 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             convergence = float(self.lineEdit.text())
         except ValueError:
             QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("Please, insert the meridian convergence."))
-            print("##########self.clearButtonState 2",self.clearButtonState)
+
             return
 
         self.clearButton.setEnabled(True)
@@ -321,7 +321,6 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         self.saveFilesButton.setEnabled(False)
         self.clearButtonState = 0
         self.saveFilesButtonState = 0
-        print("##########  self.clearButtonState 1", self.clearButtonState)
 
 
     def dd2dms(self, dd):
