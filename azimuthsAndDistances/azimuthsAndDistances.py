@@ -56,7 +56,10 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         self.points = None
         self.distancesAndAzimuths = None
         self.area = self.geom.area()
-
+        self.clearButtonState = 0
+        self.saveFilesButtonState = 0
+        self.calculateButtonState = 0
+        self.calculatedConvergence = 0
 
         # Connecting SIGNAL/SLOTS for the Output button
         self.calculateButton.clicked.connect(self.fillTable)
@@ -84,9 +87,11 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
                 convergence = convergenceCalculator.calculateConvergence2(geoPoint.x(), geoPoint.y(), a, b)
                 self.lineEdit.setText(str(convergence))
 
+                self.calculatedConvergence = 1
 
-            self.calculateButton.setEnabled(True)
-
+            if self.calculatedConvergence == 1:
+                self.calculateButton.setEnabled(True)
+                self.calculateButtonState = 1
 
     def setClockWiseRotation(self, points):
         """set clockwise Rotation
@@ -140,6 +145,7 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             d.exec_()
             #d.getConfigurationMemorial()
 
+
     def isValidType(self):
         """Verifies the geometry type.
         :param:
@@ -188,8 +194,6 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             self.distancesAndAzimuths.append((distance, azimuth))
             self.perimeter += distance
 
-        self.clearButton.setEnabled(True)
-        self.saveFilesButton.setEnabled(True)
         return self.distancesAndAzimuths
 
 
@@ -210,7 +214,13 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             convergence = float(self.lineEdit.text())
         except ValueError:
             QMessageBox.information(self.iface.mainWindow(), self.tr("Warning!"), self.tr("Please, insert the meridian convergence."))
+            print("##########self.clearButtonState 2",self.clearButtonState)
             return
+
+        self.clearButton.setEnabled(True)
+        self.saveFilesButton.setEnabled(True)
+        self.clearButtonState = 1
+        self.saveFilesButtonState = 1
 
         isClosed = False
         if self.points[0] == self.points[len(self.points) - 1]:
@@ -309,6 +319,10 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
         self.tableWidget.setRowCount(0)
         self.clearButton.setEnabled(False)
         self.saveFilesButton.setEnabled(False)
+        self.clearButtonState = 0
+        self.saveFilesButtonState = 0
+        print("##########  self.clearButtonState 1", self.clearButtonState)
+
 
     def dd2dms(self, dd):
         """
