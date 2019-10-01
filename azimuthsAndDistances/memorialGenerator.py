@@ -217,6 +217,13 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         :param:
         :return:
         """
+        color = "color: red"
+        text = "Campos obrigatórios a ser prenchido"
+
+        atualizar = self.atualizarCampos()
+        self.label_34.setText(text)
+        self.label_34.setStyleSheet(color)
+
         #dados do orgão expeditor
         self.title = self.OrgaoExpeditorEdit.text()
         self.title2= self.secretariaEdit.text()
@@ -257,23 +264,27 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         self.copyAndRenameFiles()
         try:
             self.storeConfigurationMemorial()
-            self.CheckMemorialGenerator()
-            if self.memorialSinteticHtml.isChecked():
-                self.createSimpleMemorial()
+            criarArquivo = self.CheckMemorialGenerator()
+            if criarArquivo == 1:
+                if self.memorialSinteticHtml.isChecked():
+                    self.createSimpleMemorial()
 
-            if self.tableAreaCsv.isChecked():
-                self.createArea()
+                if self.tableAreaCsv.isChecked():
+                    self.createArea()
 
-            if self.memorialDescritivoPdf.isChecked():
-                self.createFullMemorialPdf()
+                if self.memorialDescritivoPdf.isChecked():
+                    self.createFullMemorialPdf()
 
-            if self.memorialDescritivoOdt.isChecked():
-                self.createFullMemorialOdt()
+                if self.memorialDescritivoOdt.isChecked():
+                    self.createFullMemorialOdt()
 
-            if self.memorialSinteticHtml.isChecked() == self.tableAreaCsv.isChecked() == self.memorialDescritivoPdf.isChecked() == self.memorialDescritivoOdt.isChecked()==0:
-                QMessageBox.information(self, self.tr('Attention!'), self.tr('Select at least one file type!'))
-            else:
-                QMessageBox.information(self, self.tr('Information!'), self.tr('Files created successfully!'))
+                if self.memorialSinteticHtml.isChecked() == self.tableAreaCsv.isChecked() == self.memorialDescritivoPdf.isChecked() == self.memorialDescritivoOdt.isChecked()==0:
+                    QMessageBox.information(self, self.tr('Attention!'), self.tr('Select at least one file type!'))
+                else:
+                    QMessageBox.information(self, self.tr('Information!'), self.tr('Files created successfully!'))
+
+            if criarArquivo == 0:
+                QMessageBox.information(self, self.tr('Information!'), self.tr('Files feel in the gape all obrigatory fields!'))
 
 
         except IOError as e:
@@ -988,8 +999,113 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         return ptex
 
 
-    def CheckMemorialGenerator(self):
 
-        if self.OrgaoExpeditorEdit.text() == " " or self.self.secretariaEdit.text():
-            self.OrgaoExpeditorEdit.setStyleSheet("border: 2px solid red")
-            self.secretariaEdit.setStyleSheet("border: 2px solid red")
+
+
+
+    def CheckMemorialGenerator(self):
+        text = "Campo obrigatório"
+        color = "border: 1px solid red"
+        resp = 1
+        #Checando a aba Orgão expeditor
+        if not self.OrgaoExpeditorEdit.text() or self.OrgaoExpeditorEdit.text() == " ":
+            resp = 0
+            self.OrgaoExpeditorEdit.setStyleSheet(color)
+
+        if not self.secretariaEdit.text() or self.secretariaEdit.text() == " ":
+            resp = 0
+            self.secretariaEdit.setStyleSheet(color)
+
+        # Checando a aba Imóvel
+        if not self.imovelEdit.text() or self.imovelEdit.text() == " ":
+            resp = 0
+            self.imovelEdit.setStyleSheet(color)
+
+        if not self.proprietarioEdit.text() or self.proprietarioEdit.text() == " ":
+            resp = 0
+            self.proprietarioEdit.setStyleSheet(color)
+
+        if not self.enderecoEdit.text() or self.enderecoEdit.text() == " ":
+            resp = 0
+            self.enderecoEdit.setStyleSheet(color)
+
+        if not self.municipioEdit.text() or self.municipioEdit.text() == " ":
+            resp = 0
+            self.municipioEdit.setStyleSheet(color)
+
+        if not self.ufEdit.text() or self.ufEdit.text() == " ":
+            resp = 0
+            self.ufEdit.setStyleSheet(color)
+
+        #Checando a aba Responsável Técnico
+        if not self.autorEdit.text() or self.autorEdit.text() == " ":
+            resp = 0
+            self.autorEdit.setStyleSheet(color)
+
+        if not self.officeResponsibleEdit.text() or self.officeResponsibleEdit.text() == " ":
+            resp = 0
+            self.officeResponsibleEdit.setStyleSheet(color)
+
+        if not self.creaEdit.text() or self.creaEdit.text() == " ":
+            resp = 0
+            self.creaEdit.setStyleSheet(color)
+
+        if not self.mucipioResponsavelEdit.text() or self.mucipioResponsavelEdit.text() == " ":
+            resp = 0
+            self.mucipioResponsavelEdit.setStyleSheet(color)
+
+        return resp
+
+
+    def atualizarCampos(self):
+
+        text = "Campo obrigatório"
+        color = "border: 1px solid red"
+        descolor = " "
+        resp = 1
+        # Atuzalizando a aba Orgão expeditor
+        self.OrgaoExpeditorEdit.setStyleSheet(descolor)
+        self.secretariaEdit.setStyleSheet(descolor)
+
+        # Atulizando a aba Imóvel
+        self.imovelEdit.setStyleSheet(descolor)
+        self.proprietarioEdit.setStyleSheet(descolor)
+        self.enderecoEdit.setStyleSheet(descolor)
+        self.municipioEdit.setStyleSheet(descolor)
+        self.ufEdit.setStyleSheet(descolor)
+
+        # Atualizando a aba Responsável Técnico
+        self.autorEdit.setStyleSheet(descolor)
+        self.officeResponsibleEdit.setStyleSheet(descolor)
+        self.creaEdit.setStyleSheet(descolor)
+        self.mucipioResponsavelEdit.setStyleSheet(descolor)
+
+        return resp
+
+""""
+    def atualizarCamposVazios(self):
+
+        text = "Campo obrigatório"
+        color = "border: 1px solid red"
+        descolor = " "
+        resp = 1
+        # Atuzalizando a aba Orgão expeditor
+        if 
+        self.OrgaoExpeditorEdit.setStyleSheet(descolor)
+        self.secretariaEdit.setStyleSheet(descolor)
+
+        # Atulizando a aba Imóvel
+        self.imovelEdit.setStyleSheet(descolor)
+        self.proprietarioEdit.setStyleSheet(descolor)
+        self.enderecoEdit.setStyleSheet(descolor)
+        self.municipioEdit.setStyleSheet(descolor)
+        self.ufEdit.setStyleSheet(descolor)
+
+        # Atualizando a aba Responsável Técnico
+        self.autorEdit.setStyleSheet(descolor)
+        self.officeResponsibleEdit.setStyleSheet(descolor)
+        self.creaEdit.setStyleSheet(descolor)
+        self.mucipioResponsavelEdit.setStyleSheet(descolor)
+
+        return resp
+"""
