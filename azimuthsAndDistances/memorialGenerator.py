@@ -529,6 +529,7 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         :param:
         :return:
         """
+
         self.textdoc = OpenDocumentText()
         s = self.textdoc.styles
 
