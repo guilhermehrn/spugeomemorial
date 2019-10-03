@@ -221,8 +221,14 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         text = "Campos obrigatórios a ser prenchido"
 
         atualizar = self.atualizarCampos()
-        self.label_34.setText(text)
-        self.label_34.setStyleSheet(color)
+        if not atualizar:
+            self.label_34.setText(text)
+            self.label_34.setStyleSheet(color)
+        else:
+            self.label_34.setText(" ")
+            self.label_34.setStyleSheet(" ")
+
+
 
         #dados do orgão expeditor
         self.title = self.OrgaoExpeditorEdit.text()
@@ -284,7 +290,7 @@ class MemorialGenerator(QDialog, FORM_CLASS):
                     QMessageBox.information(self, self.tr('Information!'), self.tr('Files created successfully!'))
 
             if criarArquivo == 0:
-                QMessageBox.information(self, self.tr('Information!'), self.tr('Files feel in the gape all obrigatory fields!'))
+                QMessageBox.information(self, self.tr('Information!'), self.tr('feel in the gape all obrigatory fields!'))
 
 
         except IOError as e:
@@ -1004,6 +1010,12 @@ class MemorialGenerator(QDialog, FORM_CLASS):
 
 
     def CheckMemorialGenerator(self):
+        """Check is there is no empty obrigatory fields.
+        :param:
+        :return: 1 if there is, 0 in contrary case.
+        """
+
+
         text = "Campo obrigatório"
         color = "border: 1px solid red"
         resp = 1
@@ -1058,54 +1070,73 @@ class MemorialGenerator(QDialog, FORM_CLASS):
 
 
     def atualizarCampos(self):
-
+        """atualize fields. Put in red which are empty
+        :param:
+        :return: return 1, if all fields have been felt in gape and 0 if there is empty field.
+        """
         text = "Campo obrigatório"
         color = "border: 1px solid red"
         descolor = " "
         resp = 1
         # Atuzalizando a aba Orgão expeditor
-        self.OrgaoExpeditorEdit.setStyleSheet(descolor)
-        self.secretariaEdit.setStyleSheet(descolor)
+        if not self.OrgaoExpeditorEdit.text() or self.OrgaoExpeditorEdit.text() == " ":
+            print("resp:", resp)
+            resp = 0
+        else:
+            self.OrgaoExpeditorEdit.setStyleSheet(descolor)
+
+        if not self.secretariaEdit.text() or self.secretariaEdit.text() == " ":
+            resp = 0
+        else:
+             self.secretariaEdit.setStyleSheet(descolor)
+
 
         # Atulizando a aba Imóvel
-        self.imovelEdit.setStyleSheet(descolor)
-        self.proprietarioEdit.setStyleSheet(descolor)
-        self.enderecoEdit.setStyleSheet(descolor)
-        self.municipioEdit.setStyleSheet(descolor)
-        self.ufEdit.setStyleSheet(descolor)
+        if not self.imovelEdit.text() or self.imovelEdit.text() == " ":
+            resp = 0
+        else:
+            self.imovelEdit.setStyleSheet(descolor)
+
+        if not self.proprietarioEdit.text() or self.proprietarioEdit.text() == " ":
+            resp = 0
+        else:
+            self.proprietarioEdit.setStyleSheet(descolor)
+
+        if not self.enderecoEdit.text() or self.enderecoEdit.text() == " ":
+            resp = 0
+        else:
+            self.enderecoEdit.setStyleSheet(descolor)
+
+        if not self.municipioEdit.text() or self.municipioEdit.text() == " ":
+            resp = 0
+        else:
+            self.municipioEdit.setStyleSheet(descolor)
+
+        if not self.ufEdit.text() or self.ufEdit.text() == " ":
+            resp = 0
+        else:
+            self.ufEdit.setStyleSheet(descolor)
+
 
         # Atualizando a aba Responsável Técnico
-        self.autorEdit.setStyleSheet(descolor)
-        self.officeResponsibleEdit.setStyleSheet(descolor)
-        self.creaEdit.setStyleSheet(descolor)
-        self.mucipioResponsavelEdit.setStyleSheet(descolor)
+        if not self.autorEdit.text() or self.autorEdit.text() == " ":
+            resp = 0
+        else:
+            self.autorEdit.setStyleSheet(descolor)
+
+        if not self.officeResponsibleEdit.text() or self.officeResponsibleEdit.text() == " ":
+            resp = 0
+        else:
+            self.officeResponsibleEdit.setStyleSheet(descolor)
+
+        if not self.creaEdit.text() or self.creaEdit.text() == " ":
+            resp = 0
+        else:
+            self.creaEdit.setStyleSheet(descolor)
+
+        if not self.mucipioResponsavelEdit.text() or self.mucipioResponsavelEdit.text() == " ":
+            resp = 0
+        else:
+            self.mucipioResponsavelEdit.setStyleSheet(descolor)
 
         return resp
-
-""""
-    def atualizarCamposVazios(self):
-
-        text = "Campo obrigatório"
-        color = "border: 1px solid red"
-        descolor = " "
-        resp = 1
-        # Atuzalizando a aba Orgão expeditor
-        if 
-        self.OrgaoExpeditorEdit.setStyleSheet(descolor)
-        self.secretariaEdit.setStyleSheet(descolor)
-
-        # Atulizando a aba Imóvel
-        self.imovelEdit.setStyleSheet(descolor)
-        self.proprietarioEdit.setStyleSheet(descolor)
-        self.enderecoEdit.setStyleSheet(descolor)
-        self.municipioEdit.setStyleSheet(descolor)
-        self.ufEdit.setStyleSheet(descolor)
-
-        # Atualizando a aba Responsável Técnico
-        self.autorEdit.setStyleSheet(descolor)
-        self.officeResponsibleEdit.setStyleSheet(descolor)
-        self.creaEdit.setStyleSheet(descolor)
-        self.mucipioResponsavelEdit.setStyleSheet(descolor)
-
-        return resp
-"""
