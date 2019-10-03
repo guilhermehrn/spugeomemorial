@@ -674,6 +674,16 @@ p, li { white-space: pre-wrap; }
         <translation type="finished">ERRO!</translation>
     </message>
     <message>
+        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="293"/>
+        <source>Information!</source>
+        <translation type="finished">Informação!</translation>
+    </message>
+    <message>
+        <location filename="../azimuthsAndDistances/memorialGenerator.py" line="293"/>
+        <source>feel in the gape all obrigatory fields!</source>
+        <translation type="finished">Preencha todos os campos obrigatórios.</translation>
+    </message>
+    <message>
         <location filename="../azimuthsAndDistances/memorialGenerator.py" line="251"/>
         <source>You must be trying to modify or replace an existing file that is being used by another program.</source>
         <translation type="finished">Você deve estar tentando modificar ou substituir um arquivo existente que está sendo usado por outro programa.</translation>
