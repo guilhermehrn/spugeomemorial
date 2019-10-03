@@ -44,8 +44,6 @@ from reportlab.lib.units import mm
 from PyQt5.QtCore import QSettings
 
 from importlib import reload
-
-
 from odf.opendocument import OpenDocumentText
 from odf.draw import Frame,Image as image_odf,Page
 from odf.style import Style, TextProperties, ParagraphProperties, PageLayoutProperties, PageLayout, MasterPage, GraphicProperties, TableColumnProperties
@@ -59,10 +57,20 @@ reload(sys)
 #sys.setdefaultencoding('utf-8')
 
 class MemorialGenerator(QDialog, FORM_CLASS):
+    """Contains  methods for genrating a memorial
+    """
 
     def __init__(self, crsDescription, centralMeridian, convergence, tableWidget, geomArea, geomPerimeter):
-        """Constructor.
+        """Constructor
+        :param crsDescription:
+        :param centralMeridian:
+        :param convergence:
+        :param tableWidget:
+        :param geomArea:
+        :param geomPerimeter:
         """
+
+
         QDialog.__init__(self)
         self.setupUi( self )
 
@@ -94,9 +102,11 @@ class MemorialGenerator(QDialog, FORM_CLASS):
 
 
     def storeConfigurationMemorial(self):
-
+        """Store memorial configurations
+        :param
+        :return:
+        """
         #config da aba Orgao expeditor
-
         self.settings.beginGroup('memorial/Config/Last_Memorial')
         self.settings.setValue('orgaoExpeditorConf', self.OrgaoExpeditorEdit.text())
         self.settings.setValue('secretariaConf', self.secretariaEdit.text())
@@ -108,17 +118,14 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         self.settings.setValue('folderConf', self.folderEdit.text())
 
         #config da imovel
-
         self.settings.setValue('ufConf', self.ufEdit.text())
         self.settings.setValue('comarcaConf', self.comarcaEdit.text())
-
 
         #config da aba resposvel tecnico
         self.settings.setValue('autorConf', self.autorEdit.text())
         self.settings.setValue('officeResponsibleConf', self.officeResponsibleEdit.text())
         self.settings.setValue('creaConf', self.creaEdit.text())
         self.settings.setValue('mucipioResponsavelConf', self.mucipioResponsavelEdit.text())
-
 
         #Confguraç~eos de arquivo que podem ser gerados
         self.settings.setValue('memorialSinteticHtmlConf',self.memorialSinteticHtml.isChecked())
@@ -129,6 +136,10 @@ class MemorialGenerator(QDialog, FORM_CLASS):
 
 
     def getConfigurationMemorial(self):
+        """Get memorial configuration
+        :param:
+        :return:
+        """
 
         self.settings.beginGroup('memorial/Config/Last_Memorial')
 
@@ -152,13 +163,24 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         self.settings.endGroup()
 
     def setDirectory(self):
+        """Set a directory
+        :param:
+        :return:
+        """
         folder = QFileDialog.getExistingDirectory(self, "Select Directory")
         self.folderEdit.setText(folder)
 
     def closeWindows(self):
+        """Close a windows
+        :return:
+        """
         self.close()
 
     def copyAndRenameFiles(self):
+        """Copy and rename files
+        :param:
+        :return:
+        """
         currentPath = os.path.dirname(__file__)
         templatePath = os.path.join(currentPath, "templates")
         simpleMemorialTemplate = os.path.join(templatePath, "template_sintetico.html")
@@ -187,7 +209,12 @@ class MemorialGenerator(QDialog, FORM_CLASS):
             if self.memorialDescritivoOdt.isChecked():
                 self.fullMemorialOdt = os.path.join(folder, prevNameFile + "_memorial.odt")
 
+
     def createFiles(self):
+        """Create and rename files
+        :param:
+        :return:
+        """
         #dados do orgão expeditor
         self.title = self.OrgaoExpeditorEdit.text()
         self.title2= self.secretariaEdit.text()
@@ -250,6 +277,13 @@ class MemorialGenerator(QDialog, FORM_CLASS):
             QMessageBox.information(self, self.tr('ERROR!'), self.tr("You must be trying to modify or replace an existing file that is being used by another program."))
 
     def createCellElement(self, tempDoc, text, colspan, rowspan):
+        """Create a cell element
+        :param tempDoc:
+        :param text:
+        :param colspan:
+        :param rowspan:
+        :return: the cell element
+        """
         td = tempDoc.createElement("td")
         p = tempDoc.createElement("p")
         span = tempDoc.createElement("span")
@@ -271,6 +305,10 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         return td
 
     def createSimpleMemorial(self):
+        """Create a simple memorial
+        params:
+        :return:
+        """
         tempDoc = QDomDocument()
         simple = QFile(self.simpleMemorial)
         simple.open(QIODevice.ReadOnly)
@@ -330,6 +368,10 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         simple.close()
 
     def createArea(self):
+        """Create a area
+        :param
+        :return:
+        """
         newData = ""
         # "Estação    Vante    Coordenada E    Coordenada N    Az Plano    Az Real    Distância\n"
 
@@ -356,20 +398,28 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         fileCsv.writelines(content)
         fileCsv.close()
 
+
     def addPageNumber(canvas, doc):
+        """Add page number
+        :param doc:
+        :return:
+        """
         page_num = canvas.getPageNumber()
         text = "%s" % page_num
         canvas.drawRightString(184*mm, 8*mm, text)
 
     #guilherme: funcção para criar um memorial descritivo completo
     def createFullMemorialPdf(self):
+        """Create a full memorial in pdf
+        :param:
+        :return:
+        """
         #print 1
         doc = SimpleDocTemplate(self.fullMemorialPdf,pagesize=letter,rightMargin=85,leftMargin=85,topMargin=51,bottomMargin=35)
 
         Story=[]
 
         im = Image(self.logo, 1*inch, 1*inch)
-
         Story.append(im)
 
         styles=getSampleStyleSheet()
@@ -475,6 +525,10 @@ class MemorialGenerator(QDialog, FORM_CLASS):
 
 
     def createFullMemorialOdt(self):
+        """Creates a full memorial in Odt formatf
+        :param:
+        :return:
+        """
 
         self.textdoc = OpenDocumentText()
         s = self.textdoc.styles
@@ -678,6 +732,10 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         self.textdoc.save(self.fullMemorialOdt)
 
     def getDescription(self):
+        """Get ddescription
+        :param
+        :return: description
+        """
         description = str()
         description += "O imóvel descrito abaixo corresponde a terreno um de" + self.areaMetroQuad + "m², localizado à" + self.adressImovel + ", no município de" + self.cityImovel +"/" + self.ufImovel + "representado na planta" + self.plaintCor + ", processo SEI: " + self.numberSei+ "."
         description += "\n"
@@ -727,120 +785,127 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         return description
 
     def insertDescriptionodt(self):
-            #locale.setlocale(locale.LC_ALL, ("pt_BR",""))
-            boldstyle = Style(name="Bold", family="text")
-            boldprop = TextProperties(fontweight="bold")
-            boldstyle.addElement(boldprop)
-            self.textdoc.automaticstyles.addElement(boldstyle)
+        """Insert description in odt format
+        :param:
+        :return: 
+        """
+        #locale.setlocale(locale.LC_ALL, ("pt_BR",""))
+        boldstyle = Style(name="Bold", family="text")
+        boldprop = TextProperties(fontweight="bold")
+        boldstyle.addElement(boldprop)
+        self.textdoc.automaticstyles.addElement(boldstyle)
 
 
-            description = P(stylename=self.bodystyle)
-            description.addText("O imóvel descrito abaixo corresponde a um terreno de " + self.areaMetroQuad.replace('.', ',') + " m², localizado à " + self.adressImovel + ", no município de " + self.cityImovel +"/" + self.ufImovel + ", representado na planta " + self.plaintCor + ", processo SEI: " + self.numberSei)
+        description = P(stylename=self.bodystyle)
+        description.addText("O imóvel descrito abaixo corresponde a um terreno de " + self.areaMetroQuad.replace('.', ',') + " m², localizado à " + self.adressImovel + ", no município de " + self.cityImovel +"/" + self.ufImovel + ", representado na planta " + self.plaintCor + ", processo SEI: " + self.numberSei)
 
-            if self.codIncraEdit.text():
-                description.addText(", código INCRA "+ self.codIncraEdit.text()+ ".")
-                # self.textdoc.text.addElement(description)
-            else:
-                description.addText(".")
+        if self.codIncraEdit.text():
+            description.addText(", código INCRA "+ self.codIncraEdit.text()+ ".")
+            # self.textdoc.text.addElement(description)
+        else:
+            description.addText(".")
 
-            self.textdoc.text.addElement(description)
+        self.textdoc.text.addElement(description)
 
-            description = P(stylename=self.bodystyle)
-            description.addText("\n\n")
-            self.textdoc.text.addElement(description)
+        description = P(stylename=self.bodystyle)
+        description.addText("\n\n")
+        self.textdoc.text.addElement(description)
 
-            description = P(stylename=self.bodystyle)
-            description.addText("\n\n")
-            self.textdoc.text.addElement(description)
+        description = P(stylename=self.bodystyle)
+        description.addText("\n\n")
+        self.textdoc.text.addElement(description)
 
-            description.addText("Inicia-se a descrição deste perímetro no vértice ")
-            description.addElement(Span(stylename=boldstyle, text=self.tableWidget.item(0,0).text()))
+        description.addText("Inicia-se a descrição deste perímetro no vértice ")
+        description.addElement(Span(stylename=boldstyle, text=self.tableWidget.item(0,0).text()))
 
-            description.addText(", de coordenadas ")
-            description.addElement(Span(stylename=boldstyle, text="N "+ self.tableWidget.item(0,2).text().replace('.', ',')))
+        description.addText(", de coordenadas ")
+        description.addElement(Span(stylename=boldstyle, text="N "+ self.tableWidget.item(0,2).text().replace('.', ',')))
 
-            description.addText(" m e ")
-            description.addElement(Span(stylename=boldstyle, text="E " + self.tableWidget.item(0,1).text().replace('.', ',')))
+        description.addText(" m e ")
+        description.addElement(Span(stylename=boldstyle, text="E " + self.tableWidget.item(0,1).text().replace('.', ',')))
 
-            self.textdoc.text.addElement(description)
+        self.textdoc.text.addElement(description)
 
-            rowCount = self.tableWidget.rowCount()
-            itemPrev =''
+        rowCount = self.tableWidget.rowCount()
+        itemPrev =''
 
-            for i in range(0,rowCount):
-                side = self.tableWidget.item(i,3).text()
-                sideSplit = side.split("-")
+        for i in range(0,rowCount):
+            side = self.tableWidget.item(i,3).text()
+            sideSplit = side.split("-")
 
-                if self.tableWidget.item(i,7).text():
-                    if self.tableWidget.item(i,7).text() != itemPrev:
+            if self.tableWidget.item(i,7).text():
+                if self.tableWidget.item(i,7).text() != itemPrev:
 
-                        description.addText("; deste, segue confrontando com ")
-                        description.addElement(Span(stylename=boldstyle, text=self.tableWidget.item(i,7).text().upper()))
-                        description.addText(", ")
-                    else:
-                        description.addText("; deste, segue ")
+                    description.addText("; deste, segue confrontando com ")
+                    description.addElement(Span(stylename=boldstyle, text=self.tableWidget.item(i,7).text().upper()))
+                    description.addText(", ")
                 else:
-
                     description.addText("; deste, segue ")
+            else:
 
-                description.addText("com os seguintes azimute plano e distância: ")
-                description.addElement(Span(stylename=boldstyle, text=self.tableWidget.item(i,4).text().replace('.', ',')))
+                description.addText("; deste, segue ")
+
+            description.addText("com os seguintes azimute plano e distância: ")
+            description.addElement(Span(stylename=boldstyle, text=self.tableWidget.item(i,4).text().replace('.', ',')))
+            description.addText(" e ")
+
+            description.addElement(Span(stylename=boldstyle, text=self.tableWidget.item(i,6).text().replace('.', ',') + " m"))
+            description.addText("; até o vértice ")
+            itemPrev = self.tableWidget.item(i,7).text()
+            if (i == rowCount - 1):
+                description.addElement(Span(stylename=boldstyle, text=sideSplit[1]))
+                description.addText(", de coordenadas ")
+
+                description.addElement(Span(stylename=boldstyle, text="N "+ self.tableWidget.item(0,2).text().replace('.', ',')+" m"))
                 description.addText(" e ")
 
-                description.addElement(Span(stylename=boldstyle, text=self.tableWidget.item(i,6).text().replace('.', ',') + " m"))
-                description.addText("; até o vértice ")
-                itemPrev = self.tableWidget.item(i,7).text()
-                if (i == rowCount - 1):
-                    description.addElement(Span(stylename=boldstyle, text=sideSplit[1]))
-                    description.addText(", de coordenadas ")
+                description.addElement(Span(stylename=boldstyle, text="E "+self.tableWidget.item(0,1).text().replace('.', ',')+" m"))
+                description.addText(", encerrando esta descrição.")
 
-                    description.addElement(Span(stylename=boldstyle, text="N "+ self.tableWidget.item(0,2).text().replace('.', ',')+" m"))
+                description = P(stylename=self.bodystyle)
+                description.addText("\n\n")
+                self.textdoc.text.addElement(description)
+
+                description = P(stylename=self.bodystyle)
+                description.addText("\n\n")
+                self.textdoc.text.addElement(description)
+
+                description.addText(" Todas as coordenadas aqui descritas estão georreferenciadas ao Sistema Geodésico Brasileiro")
+
+                if self.rbmcOrigemEdit.text():
+
+                    description.addText(" , a partir da estação RBMC de " + self.rbmcOrigemEdit.text() + " de coordenadas ")
+                    description.addElement(Span(stylename=boldstyle, text="E " + self.rbmcEsteEdit.text().replace('.', ',') + " m"))
                     description.addText(" e ")
+                    description.addElement(Span(stylename=boldstyle, text="N " + self.rbmcNorteEdit.text().replace('.', ',')+ " m"))
+                    description.addText(" , ")
+                    description.addText("localizada em " + self.localRbmcEdit.text()+", ")
 
-                    description.addElement(Span(stylename=boldstyle, text="E "+self.tableWidget.item(0,1).text().replace('.', ',')+" m"))
-                    description.addText(", encerrando esta descrição.")
+                sp = self.projectionEdit.text().split(" ")[3]
+                #print "tai: " + sp
+                description.addText(" e encontram-se representadas no sistema UTM, referenciadas ao Meridiano Central ")
+                description.addElement(Span(stylename=boldstyle, text=self.meridianoEdit.text()))
+                description.addText(", Fuso ")
+                description.addElement(Span(stylename=boldstyle, text=str(sp)))
 
-                    description = P(stylename=self.bodystyle)
-                    description.addText("\n\n")
-                    self.textdoc.text.addElement(description)
+                description.addText(", tendo como DATUM ")
+                description.addElement(Span(stylename=boldstyle, text=self.datumEdit.text()))
+                description.addText(". Todos os azimutes e distâncias, área e perímetro foram calculados no plano de projeção UTM.")
+            else:
+                description.addElement(Span(stylename=boldstyle, text=sideSplit[1]))
+                description.addText(", de coordenadas ")
 
-                    description = P(stylename=self.bodystyle)
-                    description.addText("\n\n")
-                    self.textdoc.text.addElement(description)
-
-                    description.addText(" Todas as coordenadas aqui descritas estão georreferenciadas ao Sistema Geodésico Brasileiro")
-
-                    if self.rbmcOrigemEdit.text():
-
-                        description.addText(" , a partir da estação RBMC de " + self.rbmcOrigemEdit.text() + " de coordenadas ")
-                        description.addElement(Span(stylename=boldstyle, text="E " + self.rbmcEsteEdit.text().replace('.', ',') + " m"))
-                        description.addText(" e ")
-                        description.addElement(Span(stylename=boldstyle, text="N " + self.rbmcNorteEdit.text().replace('.', ',')+ " m"))
-                        description.addText(" , ")
-                        description.addText("localizada em " + self.localRbmcEdit.text()+", ")
-
-                    sp = self.projectionEdit.text().split(" ")[3]
-                    #print "tai: " + sp
-                    description.addText(" e encontram-se representadas no sistema UTM, referenciadas ao Meridiano Central ")
-                    description.addElement(Span(stylename=boldstyle, text=self.meridianoEdit.text()))
-                    description.addText(", Fuso ")
-                    description.addElement(Span(stylename=boldstyle, text=str(sp)))
+                description.addElement(Span(stylename=boldstyle, text="N "+ self.tableWidget.item(i+1,2).text().replace('.', ',') + " m"))
+                description.addText(" e ")
+                description.addElement(Span(stylename=boldstyle, text="E "+self.tableWidget.item(i+1,1).text().replace('.', ',') + " m"))
 
 
-
-                    description.addText(", tendo como DATUM ")
-                    description.addElement(Span(stylename=boldstyle, text=self.datumEdit.text()))
-                    description.addText(". Todos os azimutes e distâncias, área e perímetro foram calculados no plano de projeção UTM.")
-                else:
-                    description.addElement(Span(stylename=boldstyle, text=sideSplit[1]))
-                    description.addText(", de coordenadas ")
-
-                    description.addElement(Span(stylename=boldstyle, text="N "+ self.tableWidget.item(i+1,2).text().replace('.', ',') + " m"))
-                    description.addText(" e ")
-                    description.addElement(Span(stylename=boldstyle, text="E "+self.tableWidget.item(i+1,1).text().replace('.', ',') + " m"))
-                    #print "ta aqui"
 
     def insertDescriptionPDF(self):
+        """Insert description in pdf format
+        :param self:
+        :return: um imóvel
+        """
         #locale.setlocale(locale.LC_ALL, ("pt_BR",""))
         ptex = "O imóvel descrito abaixo corresponde a um terreno de " + self.areaMetroQuad.replace('.', ',') + " m², localizado à " + self.adressImovel + ", no município de " + self.cityImovel +"/" + self.ufImovel + ", representado na planta " + self.plaintCor + ", processo SEI: " + self.numberSei
 

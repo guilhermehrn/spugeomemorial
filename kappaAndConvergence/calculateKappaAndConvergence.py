@@ -21,38 +21,44 @@
 """
 
 from builtins import str
+
+import os
+#from PyQt4 import uic
+#from PyQt4.QtGui import QDialog
+#from qgis.core import QgsCoordinateReferenceSystem, QgsDistanceArea, QgsCoordinateTransform, QgsPoint
+
 from qgis.PyQt import uic
 from qgis.PyQt.QtWidgets import QDialog
 from qgis.core import QgsCoordinateReferenceSystem, QgsDistanceArea, QgsCoordinateTransform, QgsPointXY, QgsProject
 
-import os
+
 import math
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'ui_kappaAndConvergence.ui'))
 
 class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
-    """Contain routines for calculating Kapp and convergence  for a given dialog
+    """Contains methods to calulate  Kappa and convergence
     """
     def __init__(self, iface):
-        """Constructor.
-        :param: iface, self
+        """Constructor
+        :param iface:
         :return:
         """
         QDialog.__init__( self )
         self.setupUi( self )
         self.iface = iface
+
         # Connecting SIGNAL/SLOTS for the Output button
         self.calculateButton.clicked.connect(self.fillTextEdit)
         self.clearButton.clicked.connect(self.clearTextEdit)
         self.latEdit.setInputMask("#00.00000")
         self.longEdit.setInputMask("#000.00000")
 
-
     def calculateKappa(self):
         """Calculates the linear deformation factor (Kappa) for UTM projections
-        :param: self
-        :return: kappa
+        :param:
+        :return: Kappa
         """
         kappaZero = 0.9996
         latitude = float(self.latEdit.text())
@@ -60,14 +66,16 @@ class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
         centralMeridian = int(abs(longitude)/6)*6 + 3
         if longitude < 0:
             centralMeridian = centralMeridian*(-1)
-        b = math.cos(math.radians(latitude))*math.sin(math.radians(longitude - centralMeridian))
-        k = kappaZero/math.sqrt(1 - b*b)
-        return k
 
+        b = math.cos(math.radians(latitude))*math.sin(math.radians(longitude - centralMeridian))
+
+        k = kappaZero/math.sqrt(1 - b*b)
+
+        return k
 
     def calculateConvergence(self, a, b):
         """Calculates the meridian convergence
-        :param self, a:
+        :param a:
         :param b:
         :return: convergence
         """
@@ -75,92 +83,114 @@ class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
         longitude = float(self.longEdit.text())
         return self.calculateConvergence2(longitude, latitude, a, b)
 
-
     def calculateConvergence2(self, longitude, latitude, a, b):
         """Calculates the meridian convergence
-        :param self, longitude:
+        :param longitude:
         :param latitude:
         :param a:
         :param b:
-        :return: second meridian convergence
+        :return: meridian convergence
         """
         centralMeridian = int(abs(longitude)/6)*6 + 3
         if longitude < 0:
             centralMeridian = centralMeridian*(-1)
-        deltaLong = abs( centralMeridian - longitude )
-        p = 0.0001*( deltaLong*3600 )
-        xii = math.sin(math.radians(latitude))*math.pow(10, 4)
-        e2 = math.sqrt(a*a - b*b)/b
-        c5 = math.pow(math.sin(math.radians(1/3600)), 4)*math.sin(math.radians(latitude))*math.pow(math.cos(math.radians(latitude)), 4)*(2 - math.pow(math.tan(math.radians(latitude)), 2))*math.pow(10, 20)/15
-        xiii = math.pow(math.sin(math.radians(1/3600)), 2)*math.sin(math.radians(latitude))*math.pow(math.cos(math.radians(latitude)), 2)*(1 + 3*e2*e2*math.pow(math.cos(math.radians(latitude)), 2) + 2*math.pow(e2, 4)*math.pow(math.cos(math.radians(latitude)), 4))*math.pow(10, 12)/3
-        cSeconds = xii*p + xiii*math.pow(p, 3) + c5*math.pow(p, 5)
-        c = cSeconds/3600
-        return c
 
+        deltaLong = abs( centralMeridian - longitude )
+
+        p = 0.0001*( deltaLong*3600 )
+
+        xii = math.sin(math.radians(latitude))*math.pow(10, 4)
+
+        e2 = math.sqrt(a*a - b*b)/b
+
+        c5 = math.pow(math.sin(math.radians(1/3600)), 4)*math.sin(math.radians(latitude))*math.pow(math.cos(math.radians(latitude)), 4)*(2 - math.pow(math.tan(math.radians(latitude)), 2))*math.pow(10, 20)/15
+
+        xiii = math.pow(math.sin(math.radians(1/3600)), 2)*math.sin(math.radians(latitude))*math.pow(math.cos(math.radians(latitude)), 2)*(1 + 3*e2*e2*math.pow(math.cos(math.radians(latitude)), 2) + 2*math.pow(e2, 4)*math.pow(math.cos(math.radians(latitude)), 4))*math.pow(10, 12)/3
+
+        cSeconds = xii*p + xiii*math.pow(p, 3) + c5*math.pow(p, 5)
+
+        c = cSeconds/3600
+
+        return c
 
     def getSemiMajorAndSemiMinorAxis(self):
         """Obtains the semi major axis and semi minor axis from the used ellipsoid
-        :param: self
-        :return: semi major axe and semi minor axe tuple
+        :param:
+        :returns: semi major axis and semi minor axis:
         """
         currentLayer = self.iface.mapCanvas().currentLayer()
         distanceArea = QgsDistanceArea()
         distanceArea.setEllipsoid(currentLayer.crs().ellipsoidAcronym())
         a = distanceArea.ellipsoidSemiMajor()
         b = distanceArea.ellipsoidSemiMinor()
-        return (a,b)
 
+        return (a,b)
 
     def getPlanarCoordinates(self):
         """Transform the geographic coordinates to projected coordinates
-        :param: self
-        :return: last point
+        :param:
+        :return: projected coordinates
         """
         latitude = float(self.latEdit.text())
         longitude = float(self.longEdit.text())
+
         crsDest = self.iface.mapCanvas().currentLayer().crs()
         crsSrc = QgsCoordinateReferenceSystem(crsDest.geographicCrsAuthId())
-        coordinateTransformer = QgsCoordinateTransform(crsSrc, crsDest, QgsProject.instance())
-        utmPoint = coordinateTransformer.transform(QgsPointXY(longitude, latitude))
-        return utmPoint
 
+        coordinateTransformer = QgsCoordinateTransform(crsSrc, crsDest, QgsProject.instance())
+
+        utmPoint = coordinateTransformer.transform(QgsPointXY(longitude, latitude))
+
+        return utmPoint
 
     def getGeographicCoordinates(self, x, y):
         """Transform the planar coordinates to geographic coordinates
-        :param self, x:
+        :param x:
         :param y:
-        :return: geographic coordinates
+        :return: geografic coordinates
         """
+
         crsSrc = self.iface.mapCanvas().currentLayer().crs()
         crsDest = QgsCoordinateReferenceSystem(crsSrc.geographicCrsAuthId())
+
         coordinateTransformer = QgsCoordinateTransform(crsSrc, crsDest, QgsProject.instance())
+
         geoPoint = coordinateTransformer.transform(QgsPointXY(x, y))
+
         return geoPoint
 
-
     def getCentralMeridian(self, longitude):
+        """Get central meridian
+        :param longitude:
+        :return: central meridian
+        """
         centralMeridian = int(abs(longitude)/6)*6 + 3
         if longitude < 0:
             centralMeridian = centralMeridian*(-1)
 
         return centralMeridian
 
-
     def fillTextEdit(self):
         """Fills the text area with the calculated information
-        :param: self
+        :param:
         :return:
         """
         self.textEdit.clear()
+
         latitude = float(self.latEdit.text())
         longitude = float(self.longEdit.text())
         centralMeridian = self.getCentralMeridian(longitude)
         utmZone = int(centralMeridian/6) + 31
+
         ab = self.getSemiMajorAndSemiMinorAxis()
+
         reducedKappa = self.calculateKappa()
         c = self.calculateConvergence(ab[0], ab[1])
+
         convergence = self.dd2dms(c)
+
         utmPoint = self.getPlanarCoordinates()
+
         self.textEdit.append("N = "+str(utmPoint.y())+"\n")
         self.textEdit.append("E = "+str(utmPoint.x())+"\n")
         self.textEdit.append("Long = "+str(longitude)+"\n")
@@ -171,24 +201,24 @@ class CalculateKappaAndConvergenceDialog(QDialog, FORM_CLASS):
         self.textEdit.append(self.tr("Convergence DMS = ")+convergence+"\n")
         self.textEdit.append(self.tr("Convergence Decimal Degrees = ")+str(c)+"\n")
 
-
     def clearTextEdit(self):
-        """Fills the text area with the calculated information
-        :param: self
+        """Clear text edit
+        :param:
         :return:
         """
         self.textEdit.clear()
 
-
     def dd2dms(self, dd):
-        """dd 2 dimension
+        """Calculates dd2dmis
         :param dd:
-        :return: concated string composed by degrees, minutes, second
+        :return: concated  degree and time string
         """
         is_positive = dd >= 0
         dd = abs(dd)
         minutes,seconds = divmod(dd*3600,60)
         degrees,minutes = divmod(minutes,60)
+
         degrees = str(int(degrees)) if is_positive else '-' + str(int(degrees))
         minutes = int(minutes)
+
         return degrees + u"\u00b0" + str(minutes).zfill(2) + "'" + "%0.2f"%(seconds) + "''"

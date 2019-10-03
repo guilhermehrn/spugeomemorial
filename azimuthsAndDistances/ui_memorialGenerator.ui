@@ -189,8 +189,14 @@
             <layout class="QHBoxLayout" name="horizontalLayout_26">
              <item>
               <widget class="QLabel" name="label_25">
+               <property name="focusPolicy">
+                <enum>Qt::WheelFocus</enum>
+               </property>
                <property name="toolTip">
                 <string>Orgão máximo expeditor.</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
                </property>
                <property name="text">
                 <string>Ministério: </string>
@@ -199,6 +205,9 @@
              </item>
              <item>
               <widget class="QLineEdit" name="OrgaoExpeditorEdit">
+               <property name="styleSheet">
+                <string notr="true">border-color: rgb(255, 0, 255)rgb(255, 85, 0)</string>
+               </property>
                <property name="text">
                 <string>Ministério da Economia</string>
                </property>

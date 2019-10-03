@@ -22,15 +22,15 @@
 
 from __future__ import absolute_import
 from builtins import object
+import os
+
+
 from qgis.PyQt.QtCore import QCoreApplication
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 from qgis.PyQt.QtCore import QSettings, QTranslator, qVersion
 from . import resources_rc
 from .spugeo_memorial_dialog import SpuGeoMemorialDialog
-
-import os
-
 
 try:
     import ptvsd
@@ -39,7 +39,13 @@ except:
     pass
 
 class AzimuthDistanceCalculator (object):
+    """Contains azimuths distance calculator methods
+    """
     def __init__(self, iface):
+        """constructor
+        :param iface:
+        :return:
+        """
         # Save reference to the QGIS interface
         self.iface = iface
         # initialize plugin directory
@@ -77,6 +83,10 @@ class AzimuthDistanceCalculator (object):
         return QCoreApplication.translate('azimuthdistancecalculator', message)
 
     def initGui(self):
+        """Prepares the plugin interface
+        :param
+        :return:
+        """
         # Create action that will start plugin configuration
         self.action = QAction(
             QIcon(":/plugins/azimuthdistancecalculatorspu/north.png"),
@@ -89,12 +99,18 @@ class AzimuthDistanceCalculator (object):
         self.iface.addPluginToMenu(self.tr("Azimuth and Distance Calculator"), self.action)
 
     def unload(self):
-        # Remove the plugin menu item and icon
+        """Remove the plugin menu item and icon
+        :param
+        :return:
+        """
         self.iface.removePluginMenu(self.tr("Azimuth and Distance Calculator"), self.action)
         self.iface.removeToolBarIcon(self.action)
 
-    # run method that performs all the real work
     def run(self):
+        """run method that performs all the real work
+        :param
+        :return:
+        """
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop

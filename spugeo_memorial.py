@@ -161,7 +161,10 @@ class SpuGeoMemorial:
         return action
 
     def initGui(self):
-        """Create the menu entries and toolbar icons inside the QGIS GUI."""
+        """Create the menu entries and toolbar icons inside the QGIS GUI.
+        :param:
+        :return:
+        """
 
         icon_path = ':/plugins/spugeo_memorial/icon.png'
         self.add_action(
@@ -172,7 +175,10 @@ class SpuGeoMemorial:
 
 
     def unload(self):
-        """Removes the plugin menu item and icon from QGIS GUI."""
+        """Removes the plugin menu item and icon from QGIS GUI.
+        :param:
+        :return:
+        """
         for action in self.actions:
             self.iface.removePluginMenu(
                 self.tr(u'&SPUGeo Memorial'),
@@ -183,7 +189,10 @@ class SpuGeoMemorial:
 
 
     def run(self):
-        """Run method that performs all the real work"""
+        """Run method that performs all the real work
+        :param:
+        :return:
+        """
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
