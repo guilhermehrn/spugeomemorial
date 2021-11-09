@@ -1,7 +1,6 @@
 #see https://github.com/adobe-type-tools/agl-aglfn
 # -----------------------------------------------------------
-# Copyright 2002, 2010, 2015 Adobe Systems Incorporated.
-# All rights reserved.
+# Copyright 2002-2019 Adobe (http://www.adobe.com/).
 #
 # Redistribution and use in source and binary forms, with or
 # without modification, are permitted provided that the
@@ -16,10 +15,9 @@
 # disclaimer in the documentation and/or other materials
 # provided with the distribution.
 #
-# Neither the name of Adobe Systems Incorporated nor the names
-# of its contributors may be used to endorse or promote
-# products derived from this software without specific prior
-# written permission.
+# Neither the name of Adobe nor the names of its contributors
+# may be used to endorse or promote products derived from this
+# software without specific prior written permission.
 #
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
 # CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
@@ -44,7 +42,7 @@
 #   (1) glyph name--upper/lowercase letters and digits
 #   (2) Unicode scalar value--four uppercase hexadecimal digits
 #
-#END
+# END
 _glyphname2unicode = {
 	'A': 0x0041,
 	'AE': 0x00C6,

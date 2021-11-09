@@ -85,6 +85,13 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QCheckBox" name="newID">
+           <property name="text">
+            <string>novo formato</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
