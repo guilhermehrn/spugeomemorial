@@ -1,32 +1,18 @@
-Plugin Builder Results
+O complemento “SPUGeo Memorial” está disponível no Repositório Oficial de Complementos do Qgis 3 e proporciona o cálculo de azimutes e distâncias para uma feição selecionada (uma linha ou um polígono). O complemento também calcula a Convergência Meridiana e o Fator Kappa para as projeções UTM de uma determinada coordenada geográfica.
 
-Your plugin SpuGeoMemorial was created in:
-    C:/Users/Guilherme Henrique/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins\spugeomemorial
+Em vista da experiência com uso do plugin “Azimuth and Distance Calculator” e da sua relevância nas atividades rotineiras de caracterização nas Superintendências do Patrimônio da União, a Unidade Regional de Geoinformação – URGeo/MG, desenvolveu uma versão focada nos produtos finais da SPU, denominada “SPUGeo Memorial”.
 
-Your QGIS plugin directory is located at:
-    C:/Users/Guilherme Henrique/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins
+O plugin “SPUGeo Memorial” propôs as seguintes melhorias:
 
-What's Next:
+    Implementação de um modelo de Memorial padrão;
+    Implementação do memorial descritivo em um arquivo *.odt formatado;
+    Implementação do arquivo CSV;
+    Simplificação do arquivo HTML;
+    Inclusão de campos de preenchimento na interface;
+    Eliminação das saídas *.txt não utilizadas;
+    Atualização do carimbo;
+    Gravação dos dados do último preenchimento;
+    Tela de atenção quando ao datum oficial;
+    Solução do problema de codificação;
+    Solução de bugs;
 
-  * Copy the entire directory containing your new plugin to the QGIS plugin
-    directory
-
-  * Compile the resources file using pyrcc5
-
-  * Run the tests (``make test``)
-
-  * Test the plugin by enabling it in the QGIS plugin manager
-
-  * Customize it by editing the implementation file: ``spugeo_memorial.py``
-
-  * Create your own custom icon, replacing the default icon.png
-
-  * Modify your user interface by opening SpuGeoMemorial.ui in Qt Designer
-
-  * You can use the Makefile to compile your Ui and resource files when
-    you make changes. This requires GNU make (gmake)
-
-For more information, see the PyQGIS Developer Cookbook at:
-http://www.qgis.org/pyqgis-cookbook/index.html
-
-(C) 2011-2018 GeoApt LLC - geoapt.com
