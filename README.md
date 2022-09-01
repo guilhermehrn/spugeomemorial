@@ -1,4 +1,4 @@
-#SPUGeo Memorial
+# SPUGeo Memorial
 
 O complemento “SPUGeo Memorial” está disponível no Repositório Oficial de Complementos do Qgis 3 e proporciona o cálculo de azimutes e distâncias para uma feição selecionada (uma linha ou um polígono). O complemento também calcula a Convergência Meridiana e o Fator Kappa para as projeções UTM de uma determinada coordenada geográfica.
 
