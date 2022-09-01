@@ -8,9 +8,9 @@
 
 [general]
 name=SPUGeo Memorial
-qgisMinimumVersion=3.0
+qgisMinimumVersion=3.16
 description=Generates descriptive memorials in the format of the SPU of the Federal Government of Brazil
-version=1.0
+version=1.1
 author=Guilherme Henrique
 email=guilherme.nascimento@planejamento.gov.br
 
@@ -33,12 +33,16 @@ changelog= Version 0.2 (11/14/2018):
                 - Added support for multipart polygons.
                 - Enhanced Validation Alerts Fields in Memorial Generate Module.
                 - Correction of bugs.
+            Version 1.1 (05/01/2022):
+                - library update.
+                - Class Factory bug fix.
+
 
 
 # Tags are comma separated with spaces allowed
 tags=descriptive memorials, azimuths
 
-homepage=http://homepage
+homepage=https://github.com/guilhermehrn/spugeomemorial.git
 category=Plugins
 icon=icon.png
 # experimental flag
