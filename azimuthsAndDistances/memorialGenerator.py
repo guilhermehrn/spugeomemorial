@@ -270,6 +270,11 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         self.copyAndRenameFiles()
         try:
             self.storeConfigurationMemorial()
+
+            if len(self.projectionEdit.text().split(" ")) < 3:
+                QMessageBox.information(self, self.tr("ERROR!"), self.tr("A camada selecionada não está em um sistema de projeção UTM"))
+                return
+
             criarArquivo = 1 #self.CheckMemorialGenerator()
             if criarArquivo == 1:
                 if self.memorialSinteticHtml.isChecked():
@@ -502,7 +507,7 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         Story.append(t)
 
         Story.append(Spacer(1, 11))
-        ptext = '<font size=12>%s</font>' %"DESCRIÇÂO"
+        ptext = '<font size=12>%s</font>' %"DESCRIÇÃO"
         Story.append(Paragraph(ptext, styles["Center"]))
 
         Story.append(Spacer(1, 11))
@@ -986,9 +991,11 @@ class MemorialGenerator(QDialog, FORM_CLASS):
 
                 #print(self.projectionEdit.text().split(" "))
 
-                sp = 23 #estou setando como fuso horaio 23, que é o fuso paradro utilizado
+                #sp = 23 #estou setando como fuso horaio 23, que é o fuso paradro utilizado #TODO
+                sp = self.projectionEdit.text().split(" ")[3]
                 if len(self.projectionEdit.text().split(" ")) > 3:
                     sp = self.projectionEdit.text().split(" ")[3]
+
                 ptex += " e encontram-se representadas no sistema UTM, referenciadas ao Meridiano Central "
                 ptex += '<font size=11 name="Times-Bold"> %s </font>' %self.meridianoEdit.text().replace('.', ',')
                 ptex += ", Fuso " + '<font size=11 name="Times-Bold"> %s </font>' %str(sp)
