@@ -26,7 +26,7 @@ from __future__ import absolute_import
 
 import os
 import sys
-import imp
+import importlib
 
 
 currentDirectoryPath = os.path.dirname(__file__)

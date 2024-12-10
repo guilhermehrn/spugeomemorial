@@ -85,13 +85,6 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QCheckBox" name="newID">
-           <property name="text">
-            <string>novo formato</string>
-           </property>
-          </widget>
-         </item>
         </layout>
        </widget>
       </item>
@@ -210,30 +203,6 @@
                </property>
                <property name="text">
                 <string>Ministério da Economia</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_28">
-             <item>
-              <widget class="QLabel" name="label_26">
-               <property name="toolTip">
-                <string>Secretaria que está expedindo o documento.</string>
-               </property>
-               <property name="text">
-                <string>Secretaria Especial:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="secretariaEdit">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="text">
-                <string>Secretaria Especial de Desestatização e Desinvestimento</string>
                </property>
               </widget>
              </item>

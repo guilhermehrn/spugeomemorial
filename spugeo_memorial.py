@@ -23,7 +23,7 @@
 """
 from PyQt5.QtCore import QSettings, QTranslator, qVersion, QCoreApplication
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QAction
+from PyQt5.QtWidgets import QAction, QToolBar
 
 # Initialize Qt resources from file resources.py
 from . import resources_rc
@@ -66,10 +66,13 @@ class SpuGeoMemorial:
 
         # Declare instance attributes
         self.actions = []
-        self.menu = self.tr(u'&SPUGeo Memorial')
+        self.menu = self.tr(u'&SPUGeo')
         # TODO: We are going to let the user set this up in a future iteration
-        self.toolbar = self.iface.addToolBar(u'SpuGeoMemorial')
-        self.toolbar.setObjectName(u'SpuGeoMemorial')
+        self.toolbar = iface.mainWindow().findChild(QToolBar, u'SpuGeo')
+
+        if not self.toolbar:
+            self.toolbar = self.iface.addToolBar(u'SpuGeo')
+            self.toolbar.setObjectName(u'SpuGeo')
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
@@ -150,6 +153,7 @@ class SpuGeoMemorial:
 
         if add_to_toolbar:
             self.toolbar.addAction(action)
+            #self.iface.addToolBarIcon(action)
 
         if add_to_menu:
             self.iface.addPluginToMenu(
@@ -169,7 +173,7 @@ class SpuGeoMemorial:
         icon_path = ':/plugins/spugeo_memorial/icon.png'
         self.add_action(
             icon_path,
-            text=self.tr(u'Generates descriptive memorials'),
+            text=self.tr(u'SPUGeo Memorial'),
             callback=self.run,
             parent=self.iface.mainWindow())
 
@@ -181,11 +185,11 @@ class SpuGeoMemorial:
         """
         for action in self.actions:
             self.iface.removePluginMenu(
-                self.tr(u'&SPUGeo Memorial'),
+                self.tr(u'&SPUGeo'),
                 action)
             self.iface.removeToolBarIcon(action)
         # remove the toolbar
-        del self.toolbar
+        #del self.toolbar
 
 
     def run(self):

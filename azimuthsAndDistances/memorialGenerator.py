@@ -111,7 +111,7 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         #config da aba Orgao expeditor
         self.settings.beginGroup('memorial/Config/Last_Memorial')
         self.settings.setValue('orgaoExpeditorConf', self.OrgaoExpeditorEdit.text())
-        self.settings.setValue('secretariaConf', self.secretariaEdit.text())
+        # self.settings.setValue('secretariaConf', self.secretariaEdit.text())
         self.settings.setValue('superintendenciaConf', self.superintenciaEdit.text())
         self.settings.setValue('divisaoConf', self.divisaoEdit.text())
         self.settings.setValue('enderecoOrgaoConf', self.enderecoOrgaoEdit.text())
@@ -146,7 +146,7 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         self.settings.beginGroup('memorial/Config/Last_Memorial')
 
         self.OrgaoExpeditorEdit.setText(self.settings.value('orgaoExpeditorConf'))
-        self.secretariaEdit.setText(self.settings.value('secretariaConf'))
+        # self.secretariaEdit.setText(self.settings.value('secretariaConf'))
         self.superintenciaEdit.setText(self.settings.value('superintendenciaConf'))
         self.divisaoEdit.setText(self.settings.value('divisaoConf'))
         self.enderecoOrgaoEdit.setText(self.settings.value('enderecoOrgaoConf'))
@@ -217,22 +217,22 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         :param:
         :return:
         """
-        color = "color: red"
-        text = "Campos obrigatórios a ser prenchido"
+        # color = "color: red"
+        # text = "Campos obrigatórios a ser prenchido"
 
-        atualizar = self.atualizarCampos()
-        if not atualizar:
-            self.label_34.setText(text)
-            self.label_34.setStyleSheet(color)
-        else:
-            self.label_34.setText(" ")
-            self.label_34.setStyleSheet(" ")
+        # atualizar = self.atualizarCampos()
+        # if not atualizar:
+        #     self.label_34.setText(text)
+        #     self.label_34.setStyleSheet(color)
+        # else:
+        #     self.label_34.setText(" ")
+        #     self.label_34.setStyleSheet(" ")
 
 
 
         #dados do orgão expeditor
         self.title = self.OrgaoExpeditorEdit.text()
-        self.title2= self.secretariaEdit.text()
+        # self.title2= self.secretariaEdit.text()
         self.superinte = self.superintenciaEdit.text()
         self.division = self.divisaoEdit.text()
         self.adresstitle = self.enderecoOrgaoEdit.text()
@@ -270,7 +270,7 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         self.copyAndRenameFiles()
         try:
             self.storeConfigurationMemorial()
-            criarArquivo = self.CheckMemorialGenerator()
+            criarArquivo = 1 #self.CheckMemorialGenerator()
             if criarArquivo == 1:
                 if self.memorialSinteticHtml.isChecked():
                     self.createSimpleMemorial()
@@ -450,8 +450,8 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         ptext = '<font size=10.5>%s</font>' %self.title.upper()
         Story.append(Paragraph(ptext, styles["Center"]))
 
-        ptext = '<font size=10.5>%s</font>' %self.title2.upper()
-        Story.append(Paragraph(ptext, styles["Center"]))
+        # ptext = '<font size=10.5>%s</font>' %self.title2.upper()
+        # Story.append(Paragraph(ptext, styles["Center"]))
 
         #incerindo subtitulo
         ptext = '<font size=10>%s</font>' %self.superinte
@@ -653,9 +653,9 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         h=H(outlinelevel=1, stylename=h1style, text=self.title.upper())
         self.textdoc.text.addElement(h)
 
-        if len(self.title2)!= 0:
-            h=H(outlinelevel=1, stylename=h1style, text=self.title2.upper())
-            self.textdoc.text.addElement(h)
+        # if len(self.title2)!= 0:
+        #     h=H(outlinelevel=1, stylename=h1style, text=self.title2.upper())
+        #     self.textdoc.text.addElement(h)
 
         if len(self.superinte) != 0:
             h=H(outlinelevel=1, stylename=h1style2, text=self.superinte)
@@ -901,7 +901,7 @@ class MemorialGenerator(QDialog, FORM_CLASS):
                     description.addText(" , ")
                     description.addText("localizada em " + self.localRbmcEdit.text()+", ")
 
-                sp = self.projectionEdit.text().split(" ")[3]
+                sp = self.projectionEdit.text().split(" ")[3] #OLHAR AQUI GUI
                 #print "tai: " + sp
                 description.addText(" e encontram-se representadas no sistema UTM, referenciadas ao Meridiano Central ")
                 description.addElement(Span(stylename=boldstyle, text=self.meridianoEdit.text()))
@@ -1025,9 +1025,9 @@ class MemorialGenerator(QDialog, FORM_CLASS):
             resp = 0
             self.OrgaoExpeditorEdit.setStyleSheet(color)
 
-        if not self.secretariaEdit.text() or self.secretariaEdit.text() == " ":
-            resp = 0
-            self.secretariaEdit.setStyleSheet(color)
+        # if not self.secretariaEdit.text() or self.secretariaEdit.text() == " ":
+        #     resp = 0
+        #     self.secretariaEdit.setStyleSheet(color)
 
         # Checando a aba Imóvel
         if not self.imovelEdit.text() or self.imovelEdit.text() == " ":
@@ -1086,10 +1086,10 @@ class MemorialGenerator(QDialog, FORM_CLASS):
         else:
             self.OrgaoExpeditorEdit.setStyleSheet(descolor)
 
-        if not self.secretariaEdit.text() or self.secretariaEdit.text() == " ":
-            resp = 0
-        else:
-             self.secretariaEdit.setStyleSheet(descolor)
+        # if not self.secretariaEdit.text() or self.secretariaEdit.text() == " ":
+        #     resp = 0
+        # else:
+        #      self.secretariaEdit.setStyleSheet(descolor)
 
 
         # Atulizando a aba Imóvel

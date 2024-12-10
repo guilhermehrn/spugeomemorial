@@ -142,7 +142,7 @@ class AzimuthsAndDistancesDialog(QDialog, FORM_CLASS):
             for i in range(self.tableWidget.rowCount()):
                 item = self.tableWidget.item(i, 7)
                 confrontingList.append(item.text())
-
+            print('TESTE',self.iface.mapCanvas().currentLayer().crs().description())
             d = MemorialGenerator(self.iface.mapCanvas().currentLayer().crs().description(), self.centralMeridian, self.lineEdit.text(), self.tableWidget, self.area, self.perimeter)
             d.getConfigurationMemorial()
             d.exec_()
